@@ -1,5 +1,4 @@
-import Home from '@modules/home/page/index';
-import Head from 'next/head';
+import Home from '@modules/home/page/index'
 
 export default () => {
   return <Home />
