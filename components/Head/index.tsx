@@ -1,6 +1,6 @@
 import { Head } from 'next/document'
 
-const MyHead = () => (
+export default () => (
   <Head>
     <title>超猫</title>
     <meta
@@ -9,6 +9,4 @@ const MyHead = () => (
     />
     <link rel="icon" href="/favicon.ico" />
   </Head>
-);
-
-export default MyHead
+)
