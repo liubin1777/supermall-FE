@@ -1,4 +1,4 @@
-import Home from '@modules/home/page/index'
+import Home from '@modules/home/pages/index'
 
 export default () => {
   return <Home />
