@@ -6,7 +6,7 @@ const nextConfig = {
   webpack,
   exportPathMap: function () {
     return {
-      '/': { page: '/' }
+      '/': { page: '/home' }
     }
   }
 }
