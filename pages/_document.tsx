@@ -1,11 +1,11 @@
 import Document, { Html, Main, NextScript, DocumentContext } from 'next/document'
-import MyHead from '@components/Head'
+import Head from '@components/Head'
 
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
-        <MyHead />
+      <Html lang="en">
+        <Head />
         <body>
           <Main />
           <NextScript />
@@ -15,4 +15,4 @@ class MyDocument extends Document {
   }
 }
 
-export default MyDocument;
+export default MyDocument
