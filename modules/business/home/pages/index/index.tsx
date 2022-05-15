@@ -1,9 +1,11 @@
 import type { NextPage } from 'next'
 import styles from './index.module.css'
+import TabBar from '@components/TabBar'
 
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
+      <TabBar />
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>

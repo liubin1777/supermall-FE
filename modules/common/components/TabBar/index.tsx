@@ -1,7 +1,7 @@
 import React from 'react';
-import './button.css';
+import styles from './index.module.css';
 
-interface ButtonProps {
+interface iProps {
   /**
    * Is this the principal call to action on the page?
    */
@@ -17,32 +17,23 @@ interface ButtonProps {
   /**
    * Button contents
    */
-  label: string;
+  label?: string;
   /**
    * Optional click handler
    */
   onClick?: () => void;
 }
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({
+export default ({
   primary = false,
   size = 'medium',
   backgroundColor,
   label,
   ...props
-}: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+}: iProps) => {
   return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
+    <div className={styles.tabbar}>
+      tabbar
+    </div>
   );
 };

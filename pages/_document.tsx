@@ -1,5 +1,5 @@
 import Document, { Html, Main, NextScript, DocumentContext } from 'next/document'
-import Head from '@components/Head'
+import Head from '@modules/common/components/Head'
 
 class MyDocument extends Document {
   render() {
