@@ -18,6 +18,7 @@
     "paths": {
       "@components/*": ["modules/common/components/*"],
       "@modules/*": ["modules/*"],
+      "@service/*": ["service/*"],
       "@/*": ["/*"]
     },
   },

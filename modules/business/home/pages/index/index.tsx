@@ -1,8 +1,15 @@
 import type { NextPage } from 'next'
+import * as React from 'react'
 import styles from './index.module.css'
 import TabBar from '@components/TabBar'
+import tabbarAPI from '@service/apis/tabbarAPI'
 
 const Home: NextPage = () => {
+
+  React.useEffect(() => {
+    tabbarAPI();
+  }, []);
+
   return (
     <div className={styles.container}>
       <TabBar />
