@@ -1,5 +1,13 @@
-.tabbar {
-  background-color: red;
-  width: 750rem;
+.root {
+  background-color: rgb(255, 209, 209);
+  width: 100vw;
   height: 96rem;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.item {
+  height: 100%;
+  flex: 1 auto;
+  background-color: rgb(234, 255, 209)
 }

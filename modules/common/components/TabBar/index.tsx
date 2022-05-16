@@ -2,38 +2,23 @@ import React from 'react';
 import styles from './index.module.css';
 
 interface iProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
-  label?: string;
-  /**
-   * Optional click handler
-   */
+  data?: Array<any>;
   onClick?: () => void;
 }
 
 export default ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
+  data,
 }: iProps) => {
-  return (
-    <div className={styles.tabbar}>
-      tabbar
-    </div>
-  );
+
+  if (!data || data.length === 0) {
+    return null;
+  }else {
+    return (
+      <div className={styles.root}>
+        {data.map((item, idx) => (
+          <div className={styles.item}>111</div>
+        ))}
+      </div>
+    );
+  }
 };
