@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 
 // API环境
 const API_ENVS = {

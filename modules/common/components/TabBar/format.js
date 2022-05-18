@@ -1,13 +1,13 @@
-export default (rawData: Array<any>) => {
+export default (rawData) => {
 
   if (!rawData || rawData.length === 0) {
     return [];
   }
 
-  const formatedData: Array<any> = [];
+  const formatedData = [];
   rawData.forEach( (rawItem) => {
 
-    const item: any = {};
+    const item = {};
     const {id, attributes} = rawItem;
     const {name, img_n, img_s} = attributes;
 
