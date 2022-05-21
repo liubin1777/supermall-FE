@@ -1,0 +1,43 @@
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 24rem;
+  color: #7F7F7F;
+  background: transparent;
+  padding: 30rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  display: inline-block;
+  background: #7F7F7F;
+  margin: 0 3px;
+}
+
+.bullet-active {
+  width: 16px;
+  background: #E61F00;
+}
+
+.swiper-item {
+  width: 140rem;
+}
+
+.img {
+  width: 80rem;
+  height: 80rem;
+}
+
+.title {
+  margin-top: 4rem;
+  margin-bottom: 20rem;
+}
