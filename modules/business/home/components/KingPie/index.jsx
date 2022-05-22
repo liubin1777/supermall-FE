@@ -17,7 +17,7 @@ export default React.memo(({ data }) => {
   }
 
   const paginationConfig = {
-    dynamicBullets: true,
+    // dynamicBullets: true,
     clickable: true,
     bulletClass: styles['bullet'],
     bulletActiveClass: styles['bullet-active'],
