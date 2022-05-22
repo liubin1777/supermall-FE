@@ -17,4 +17,5 @@ const formatedMockData = formatData(mockData.data);
 export const Primary = Template.bind({});
 Primary.args = {
   data: formatedMockData,
+  selectedIdx: 1,
 };

@@ -3,7 +3,7 @@ const webpack = require('./webpack.config');
 
 const nextConfig = {
   reactStrictMode: true,
-  webpack,
+  webpack: webpack.next,
   exportPathMap: function () {
     return {
       '/': { page: '/home' }

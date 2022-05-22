@@ -1,10 +1,11 @@
 import * as React from 'react';
 
-export default (props, options) => {
-    const { onChange } = options;
+export default (nextProps, options) => {
+    const { onChange } = options || {};
 
     const rerender = React.useReducer(v => v + 1, 0)[1];
     const onChangeRef = React.useRef(onChange);
+    const preProps = React.useRef();
     const stateRef = React.useRef();
     const setState = React.useRef(value => {
         let newState;
@@ -20,8 +21,9 @@ export default (props, options) => {
 
     onChangeRef.current = onChange;
 
-    if (props !== null && props !== stateRef.current) {
-        stateRef.current = props;
+    if (nextProps !== null && preProps.current !== nextProps) {
+        preProps.current = nextProps
+        stateRef.current = nextProps;
     }
 
     return [stateRef.current, setState.current];

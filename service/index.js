@@ -9,6 +9,4 @@ const service = {
   hooks
 };
 
-window.$service = service;
-
 export default service;
