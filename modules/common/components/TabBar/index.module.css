@@ -1,14 +1,11 @@
 .root {
-  background-color: rgb(255, 209, 209);
-  /* background-color: #FFFFFF; */
-  width: 100vw;
+  border: 1px solid red;
+  background-color: #FFFFFF;
   height: 96rem;
   display: flex;
-  flex-wrap: nowrap;
 }
 
 .item {
-  /* background-color: rgb(234, 255, 209); */
   flex: 1 auto;
   margin: 8rem;
   box-sizing: border-box;
@@ -19,21 +16,12 @@
 }
 
 .icon {
-  /* background-color: rgb(255, 179, 166); */
-  width: 40rem;
-  height: 40rem;
-  margin-bottom: 6rem;
-}
-
-.icon-selected {
-  /* background-color: rgb(255, 179, 166); */
   width: 40rem;
   height: 40rem;
   margin-bottom: 6rem;
 }
 
 .title {
-  /* background-color: rgb(199, 205, 255); */
   font-size: 22rem;
   color: #201C1C;
   font-family: PingFangHK-Regular, sans-serif;
