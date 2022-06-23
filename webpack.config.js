@@ -11,7 +11,6 @@ module.exports.storybook = ({config}) => {
 }
 
 function customWebpackConfig(config) {
-  debugger;
   config.resolve.alias["@/"] = path.resolve(__dirname, './');
   config.resolve.alias["@service"] = path.resolve(__dirname, './service');
   config.resolve.alias["@components"] = path.resolve(__dirname, './modules/common/components');

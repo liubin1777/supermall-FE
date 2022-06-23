@@ -77,12 +77,13 @@
   background: #F6F6F6;
   color: #7F7F7F;
   font-size: 18rem;
-  width:75rem;
   height: 28rem;
+  padding-right: 4rem;
   padding-left: 10rem;
   border-top-left-radius: 14rem;
   border-bottom-left-radius: 14rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  white-space: nowrap;
 }
