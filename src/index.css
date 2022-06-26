@@ -1,0 +1,23 @@
+@import 'normalize.css';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: PingFangSC-Regular, Helvetica, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+/* 基于 vw + rem + 750视觉稿，适配移动端（100vw/750rpx）=> 0.13333333vw = 1px, 视觉稿标注750px，代码上就写750rem */
+html {
+  font-size: 0.13333333vw;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
