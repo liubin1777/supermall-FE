@@ -17,7 +17,7 @@ function customWebpackConfig(config) {
       '@root': path.resolve(__dirname, 'src'),
       '@page': path.resolve(__dirname, 'src/pages'),
       '@component': path.resolve(__dirname, 'src/components'),
-      '@util': path.resolve(__dirname, 'src/util')
+      '@service': path.resolve(__dirname, 'src/service')
     }
     config.resolve.alias = {...config.resolve.alias, ...aliasExtension}
 

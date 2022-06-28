@@ -1,0 +1,32 @@
+.root {
+  /* border: 1px solid red; */
+  background-color: #FFFFFF;
+  height: 96rem;
+  display: flex;
+}
+
+.item {
+  flex: 1 auto;
+  margin: 8rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.icon {
+  width: 40rem;
+  height: 40rem;
+  margin-bottom: 6rem;
+}
+
+.title {
+  font-size: 22rem;
+  color: #201C1C;
+  font-family: PingFangHK-Regular, sans-serif;
+}
+
+.title-selected {
+  color: #E61F00;
+}

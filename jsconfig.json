@@ -11,10 +11,10 @@
       "@component/*": [
         "./src/components/*"
       ],
-      "@util": [
+      "@service": [
         "src/service/index"
       ],
-      "@util/*": [
+      "@service/*": [
         "src/service/*"
       ]
     }
