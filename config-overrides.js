@@ -11,6 +11,7 @@ module.exports.storybook = ({config}) => {
 }
 
 function customWebpackConfig(config) {
+  debugger;
     // 别名扩展：https://webpack.docschina.org/configuration/resolve/
     const aliasExtension = {
       '@root': path.resolve(__dirname, 'src'),

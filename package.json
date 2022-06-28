@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "ahooks": "^3.3.10",
+    "axios": "^0.27.2",
+    "classnames": "^2.3.1",
+    "loadsh": "^0.0.4",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "swiper": "^8.1.5"
   },
   "scripts": {
     "server": "http-server ./server",
@@ -15,9 +19,9 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
+    "pkg": "rm -rf ./node_modules && yarn install",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
-    "pkg": "rm -rf ./node_modules && yarn install"
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
@@ -25,6 +29,14 @@
       "react-app/jest"
     ],
     "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      },
       {
         "files": [
           "**/*.stories.*"

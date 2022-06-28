@@ -5,7 +5,7 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import util from '@util';
+import service from '@root/service';
 import Loading from './components/loading';
 
 const routerPaths = [
@@ -28,7 +28,7 @@ const routerPaths = [
 ]
 
 const router = (
-  <HistoryRouter history={util.navigate.history}>
+  <HistoryRouter history={service.navigate.history}>
     <React.Suspense fallback={<Loading />}>
       <Routes>
         {routerPaths.map((item, idx) => {

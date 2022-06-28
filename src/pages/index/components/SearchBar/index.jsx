@@ -9,11 +9,11 @@ import classNames from 'classnames';
  * @return {Object} ReactElement
  */
 export default React.memo(({ data }) => {
+  const [selectedIdx, setSelectedIdx] = React.useState(0);
+
   if (!data || !data.list || data.list.length === 0) {
     return null;
   }
-
-  const [selectedIdx, setSelectedIdx] = React.useState(0);
 
   // 点击回调
   function onClick(e) {
