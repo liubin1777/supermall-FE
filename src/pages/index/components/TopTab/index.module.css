@@ -4,7 +4,7 @@
   /* background: red; */
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .scroll {
@@ -21,15 +21,24 @@
 }
 
 .item {
+  font-size: 28rem;
+  color: white;
   display: inline-block;
-  margin: 0 15rem;
+  margin: 0 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
 }
 
 .item-selected {
-  font-size: 32rem;
+  font-size: 30rem;
   font-weight: bold;
 }
 
-.more {
-  padding: 10rem 30rem 6rem 0;
+.indicator {
+  margin-bottom: 4px;
+  width: 26rem;
+  height: 10rem;
 }

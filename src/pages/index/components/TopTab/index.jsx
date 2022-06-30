@@ -17,31 +17,34 @@ export default React.memo(({ data, onClickCallBack }) => {
 
   // 点击回调
   function onClick(e) {
-    const { name, idx } = e.target.dataset;
+    const { name, idx } = e.currentTarget.dataset;
     console.log('[SuperMall] TopTab|onClick', name, idx);
 
     setSelectedIdx(idx);
 
-    debugger;
     onClickCallBack && onClickCallBack(data.list[idx]);
   }
 
   console.log('[SuperMall] TopTab|render');
   return (
     <div className={styles.root}>
-      <div className={styles.scroll}>
-        {data.list.map((item, idx) => {
-          const itemStyle = classNames(styles.item, {
-            [styles['item-selected']]: idx == selectedIdx,
-          });
+      {data.list.map((item, idx) => {
+        const isSelectedIdx = idx == selectedIdx;
+        const itemStyle = classNames(styles.item, {
+          [styles['item-selected']]: isSelectedIdx,
+        });
 
-          return (
-            <div className={itemStyle} data-idx={idx} data-name={item.name} onClick={onClick}>
-              {item.name}
-            </div>
-          );
-        })}
-      </div>
+        return (
+          <div
+            className={itemStyle}
+            data-idx={idx}
+            data-name={item.name}
+            onClick={onClick}>
+              {isSelectedIdx && <img className={styles.indicator} src={data.img} alt="" />}
+              <div>{item.name}</div>
+          </div>
+        );
+      })}
     </div>
   );
 });
