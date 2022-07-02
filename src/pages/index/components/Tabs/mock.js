@@ -44,6 +44,6 @@ export default {
         name: 'PLUS会员',
       },
     ],
-    img: 'http://127.0.0.1:8080/assets/tabs/more.png'
+    img: 'http://127.0.0.1:8080/assets/index/more.png'
   },
 };

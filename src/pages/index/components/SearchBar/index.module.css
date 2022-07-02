@@ -1,35 +1,43 @@
 .root {
-  width: 100%;
-  height: 60rem;
-  /* background: red; */
+  margin: 10rem 30rem;
+  height: 62rem;
+  border-radius: 31rem;
+  background: white;
+  padding: 0 28rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
-.scroll {
-  color: white;
+.search {
+  width: 32rem;
+  height: 32rem;
+}
+
+.input {
+ /* background: yellow; */
+ height: 100%;
+ line-height: 62rem;
+ padding: 0 12rem;
+ flex: 1 1 auto;
+ color: #685D5B;
+ font-size: 28rem;
+}
+
+.camera {
+  width: 40rem;
+  height: 34rem;
+}
+
+.scanner {
+  width: 32rem;
+  height: 32rem;
+}
+
+.line {
+  background-color: #D8D8D8;
   /* background: blue; */
-  font-size: 30rem;
-  margin: 0 15rem;
-  overflow-y: scroll;
-  white-space: nowrap;
-}
-
-.scroll::-webkit-scrollbar {
-  display: none;
-}
-
-.item {
-  display: inline-block;
-  margin: 0 15rem;
-}
-
-.item-selected {
-  font-size: 32rem;
-  font-weight: bold;
-}
-
-.more {
-  padding: 10rem 30rem 6rem 0;
+  margin: 0 16rem;
+  width: 1px;
+  height: 22rem;
 }

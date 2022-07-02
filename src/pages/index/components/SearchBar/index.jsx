@@ -2,6 +2,10 @@ import * as React from 'react';
 import styles from './index.module.css';
 import classNames from 'classnames';
 
+const IMAGE_SEARCH = 'http://127.0.0.1:8080/assets/index/img-search.png';
+const IMAGE_CAMERA = 'http://127.0.0.1:8080/assets/index/img-camera.png';
+const IMAGE_SCANNER = 'http://127.0.0.1:8080/assets/index/img-scanner.png';
+
 /**
  * SearchBar组件
  *
@@ -9,45 +13,22 @@ import classNames from 'classnames';
  * @return {Object} ReactElement
  */
 export default React.memo(({ data }) => {
-  const [selectedIdx, setSelectedIdx] = React.useState(0);
-
-  if (!data || !data.list || data.list.length === 0) {
-    return null;
-  }
 
   // 点击回调
   function onClick(e) {
     const { name, idx } = e.target.dataset;
-    console.log('[SuperMall] Tabs|onClick', name, idx);
-
+    console.log('[SuperMall] SearchBar|onClick', name, idx);
     setSelectedIdx(idx);
-
-    e.nativeEvent.target.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center',
-      inline: 'center',
-    });
   }
 
-  console.log('[SuperMall] Tabs|render');
+  console.log('[SuperMall] SearchBar|render');
   return (
     <div className={styles.root}>
-      <div className={styles.scroll}>
-        {data.list.map((item, idx) => {
-          const itemStyle = classNames(styles.item, {
-            [styles['item-selected']]: idx == selectedIdx,
-          });
-
-          return (
-            <div className={itemStyle} data-idx={idx} data-name={item.name} onClick={onClick}>
-              {item.name}
-            </div>
-          );
-        })}
-      </div>
-      <div className={styles.more}>
-        <img src={data.img} alt="" />
-      </div>
+      <img className={styles.search} src={IMAGE_SEARCH} />
+      <div className={styles.input} > 小龙虾 </div>
+      <img className={styles.camera} src={IMAGE_CAMERA} />
+      <div className={styles.line}></div>
+      <img className={styles.scanner} src={IMAGE_SCANNER} />
     </div>
   );
 });
