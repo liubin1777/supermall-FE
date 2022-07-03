@@ -22,6 +22,10 @@ const routerPaths = [
     page: import('./pages/order-list')
   },
   {
+    path: '/login',
+    page: import('./pages/login')
+  },
+  {
     path: '*',
     page: <div>Page Gone 404</div>
   }
