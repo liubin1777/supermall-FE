@@ -59,6 +59,10 @@
   color: #0077C8;
 }
 
+.code-loading {
+  color: rgba(0, 120, 200, 0.6);
+}
+
 .line {
   position: relative;
 }
