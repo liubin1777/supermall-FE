@@ -7,22 +7,26 @@ const HOST_ENVS = {
   },
   // 开发环境
   dev: {
-    api: 'http://127.0.0.1:1337', // 接口host
+    api: 'http://127.0.0.1:8085', // 接口host
     asset: 'http://127.0.0.1:1337', // 图片host
   },
 };
 
 // 默认线上环境
-const DEFAULT_ENV = 'pro';
+const ENV = process.env.NODE_ENV === 'development' ? 'dev' : 'pro' || 'pro';
 
-function getHostEnvs(env = DEFAULT_ENV) {
-  return HOST_ENVS[env] || HOST_ENVS[DEFAULT_ENV];
+export function getEnv() {
+  return ENV;
 }
 
-export function getApiHost(env = DEFAULT_ENV) {
+export function getHostEnvs(env) {
+  return HOST_ENVS[env];
+}
+
+export function getApiHost(env = ENV) {
   return getHostEnvs(env)['api'];
 }
 
-export function getAssetHost(env = DEFAULT_ENV) {
+export function getAssetHost(env = ENV) {
   return getHostEnvs(env)['asset'];
 }

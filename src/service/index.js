@@ -1,9 +1,13 @@
 import util from './util';
 import navigate from './navigate';
-import * as hooks from './hooks';
+import request from './request';
+import * as hook from './hook';
+import * as api from './api';
 
 export default {
   util,
   navigate,
-  hooks,
+  request,
+  hook,
+  api
 };

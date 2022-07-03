@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from './index.module.css';
 import classNames from 'classnames';
-import service from '@service';
+import Service from '@service';
 /**
  * TabBar组件
  *
@@ -15,7 +15,7 @@ export default React.memo(({ data, selectedIdx: _selectedIdx = 0 }) => {
     return null;
   }
 
-  const [selectedIdx, setSelectedIndex] = service.hooks.useDerivedStateFromProps(_selectedIdx);
+  const [selectedIdx, setSelectedIndex] = Service.hook.useDerivedStateFromProps(_selectedIdx);
 
   console.log('[SuperMall] TabBar|render');
   return (

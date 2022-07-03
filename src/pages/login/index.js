@@ -1,20 +1,21 @@
 import styles from './index.module.css';
 import { useState, useRef } from 'react';
 import classNames from 'classnames';
+import * as PageService from './service'
 
-let timer;
+let timer; // 验证码计时器
+const COUNT_DOWN = 60; // 倒计时60秒
 const CODE_DESC = '获取验证码';
 const CODE_LOADING = '秒后重试';
-const COUNT_DOWN = 5;
 
 /**
  * 登录页面
  */
 export default function Login() {
-  const [phone, setPhone] = useState('');
-  const [code, setCode] = useState('');
-  const [getCodeDes, setGetCodeDes] = useState(CODE_DESC);
-  const countDown = useRef(COUNT_DOWN);
+  const [phone, setPhone] = useState('18618138919'); // 手机号
+  const [code, setCode] = useState(''); // 验证码
+  const [getCodeDes, setGetCodeDes] = useState(CODE_DESC); // 获取验证码描述
+  const countDown = useRef(COUNT_DOWN); // 验证码倒计时
 
   /**
    * 点击登录
@@ -32,6 +33,22 @@ export default function Login() {
     if (timer) {
       return;
     }
+
+    // 手机号输入有误
+    if (!phone) {
+      alert('请输入有效的手机号');
+    }
+
+    // 获取验证码
+    PageService.getAuthCode(phone).then((data) => {
+      console.log('[SuperMall] 登录页面|onClickGetAuthCode|验证码 = ', data);
+      setTimeout(()=>{
+        setCode(data)
+      }, 1000)
+    }).catch((err) => {
+      console.error('[SuperMall] 登录页面|onClickGetAuthCode|验证码|失败 = ', err);
+      alert('验证码获取失败');
+    })
 
     setGetCodeDes(`(${countDown.current}${CODE_LOADING})`);
 
@@ -65,11 +82,11 @@ export default function Login() {
           <input
             className={styles['code-input']}
             type="text"
-            placeholder=""
+            placeholder="输入验证码"
             value={code}
             onChange={(e) => setCode(e.target.value)}
           />
-          <div className={classNames(styles['code-btn'], {[styles['code-loading']]: getCodeDes != CODE_DESC})} onClick={onClickGetAuthCode}>
+          <div className={classNames(styles['code-btn'], {[styles['code-loading']]: getCodeDes !== CODE_DESC})} onClick={onClickGetAuthCode}>
             {getCodeDes}
           </div>
         </div>
