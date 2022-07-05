@@ -37,7 +37,7 @@ export default React.memo(({ data }) => {
             <div className={styles['label-layout']}>
               <img
                 className={styles.label}
-                src="http://127.0.0.1:8080/assets/index/goodscard/label-chaoshi.png"
+                src="http://127.0.0.1:8080/assets/home/goodscard/label-chaoshi.png"
               />
             </div>
           </div>

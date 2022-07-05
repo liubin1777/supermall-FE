@@ -11,7 +11,7 @@ import Loading from './components/loading';
 const routerPaths = [
   {
     path: '/',
-    page: import('./pages/index')
+    page: import('./pages/home/index')
   },
   {
     path: '/me',

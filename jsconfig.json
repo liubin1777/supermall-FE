@@ -16,6 +16,12 @@
       ],
       "@service/*": [
         "src/service/*"
+      ],
+      "@util": [
+        "src/util/index"
+      ],
+      "@util/*": [
+        "src/util/*"
       ]
     }
   }

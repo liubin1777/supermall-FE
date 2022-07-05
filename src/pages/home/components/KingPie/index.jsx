@@ -4,6 +4,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper';
+import mockData from './mock';
+import format from './format';
 
 /**
  * 金刚位组件
@@ -13,7 +15,7 @@ import { Pagination } from 'swiper';
  */
 export default React.memo(({ data }) => {
   if (!data || data.length === 0) {
-    return null;
+    data = format(mockData.data);
   }
 
   const paginationConfig = {

@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay } from 'swiper';
+import mockData from './mock';
 
 /**
  * Banner组件
@@ -13,7 +14,7 @@ import { Autoplay } from 'swiper';
  */
 export default React.memo(({ data }) => {
   if (!data || data.length === 0) {
-    return null;
+    data = mockData.data;
   }
 
   // 点击回调

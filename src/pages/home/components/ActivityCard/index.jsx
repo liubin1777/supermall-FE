@@ -35,7 +35,7 @@ export default React.memo(({ data }) => {
               <div className={styles.item}>
                 <img
                   className={styles['goods-img']}
-                  src="http://127.0.0.1:8080/assets/index/activitycard/2.png"
+                  src="http://127.0.0.1:8080/assets/home/activitycard/2.png"
                   alt=""
                 />
                 <div className={styles['price-container']}>

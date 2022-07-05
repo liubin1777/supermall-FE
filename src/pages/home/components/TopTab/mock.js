@@ -1,6 +1,6 @@
 export default {
   data: {
-    img: 'http://127.0.0.1:8080/assets/index/img-tab-indicator.png',
+    img: 'http://127.0.0.1:8080/assets/home/img-tab-indicator.png',
     list: [
       {
         name: '首页',

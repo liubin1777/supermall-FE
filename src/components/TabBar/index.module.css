@@ -3,6 +3,12 @@
   background-color: #FFFFFF;
   height: 96rem;
   display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  width: 100vw;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .item {

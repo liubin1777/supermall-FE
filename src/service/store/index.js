@@ -1,6 +1,5 @@
 const DEFAULT_PREFIX = 'SuperMall_';
 const AUTHORIZATION_KEY = 'authorization';
-
 class Store {
   constructor() {
   }

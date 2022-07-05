@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from './index.module.css';
 import classNames from 'classnames';
+import mockData from './mock';
 
 /**
  * TopTab组件
@@ -12,7 +13,7 @@ export default React.memo(({ data, onClickCallBack }) => {
   const [selectedIdx, setSelectedIdx] = React.useState(0);
 
   if (!data || !data.list || data.list.length === 0) {
-    return null;
+    data = mockData.data;
   }
 
   // 点击回调

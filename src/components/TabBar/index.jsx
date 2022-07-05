@@ -2,6 +2,8 @@ import * as React from 'react';
 import styles from './index.module.css';
 import classNames from 'classnames';
 import Service from '@service';
+import mockData from './mock';
+
 /**
  * TabBar组件
  *
@@ -12,10 +14,11 @@ import Service from '@service';
 export default React.memo(({ data, selectedIdx: _selectedIdx = 0 }) => {
   // 判空处理
   if (!data || data.length === 0) {
-    return null;
+    data = mockData.data;
   }
 
-  const [selectedIdx, setSelectedIndex] = Service.hook.useDerivedStateFromProps(_selectedIdx);
+  const [selectedIdx, setSelectedIndex] =
+    Service.hook.useDerivedStateFromProps(_selectedIdx);
 
   console.log('[SuperMall] TabBar|render');
   return (
@@ -31,9 +34,15 @@ export default React.memo(({ data, selectedIdx: _selectedIdx = 0 }) => {
 
         return (
           // tabbar-item容器
-          <div className={styles.item} key={idx} onClick={()=>setSelectedIndex(idx)}>
+          <div
+            className={styles.item}
+            key={idx}
+            onClick={() => setSelectedIndex(idx)}>
             {/* 图片 */}
-            <img className={styles.icon} src={selected ? item.img_s : item.img_n} />
+            <img
+              className={styles.icon}
+              src={selected ? item.img_s : item.img_n}
+            />
             {/* 标题 */}
             <div className={titleStyle}>{item.name}</div>
           </div>
