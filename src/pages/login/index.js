@@ -22,6 +22,16 @@ export default function Login() {
    */
   function onClickLogin() {
     console.log('[SuperMall] 登录页面|onClickLogin = ', phone, code);
+
+    if (!phone || !code) {
+      alert('请输入手机号和验证码');
+    }
+
+    PageService.loginByPhoneAndCode(phone, code).then((res) => {
+      console.log('[SuperMall] 登录页面|onClickLogin 成功 = ', res);
+    }).catch((err) => {
+      console.error('[SuperMall] 登录页面|onClickLogin 失败 = ', err);
+    })
   }
 
   /**
@@ -42,9 +52,7 @@ export default function Login() {
     // 获取验证码
     PageService.getAuthCode(phone).then((data) => {
       console.log('[SuperMall] 登录页面|onClickGetAuthCode|验证码 = ', data);
-      setTimeout(()=>{
-        setCode(data)
-      }, 1000)
+      setCode(data);
     }).catch((err) => {
       console.error('[SuperMall] 登录页面|onClickGetAuthCode|验证码|失败 = ', err);
       alert('验证码获取失败');

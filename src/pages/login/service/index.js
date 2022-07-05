@@ -1,3 +1,3 @@
 import Service from '@service';
 
-export const { getAuthCode } = Service.api;
+export const { getAuthCode, loginByPhoneAndCode } = Service.api;

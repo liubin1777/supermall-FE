@@ -1,17 +1,37 @@
 import Service from '@service';
+import './interceptors/authorization';
 
 /**
  * 获取验证码
  *
- * @param {String} [telephone] 手机号
+ * @param {String} [phone] 手机号
  * @returns {Promise}
  */
-export function getAuthCode(telephone) {
-  return Service.request({
-    method: 'GET',
+export function getAuthCode(phone) {
+  return Service.request.get({
     url: '/sso/getAuthCode',
     params: {
-      telephone
+      phone
+    }
+  }).then((res = {}) => {
+    return res.data;
+  });
+}
+
+export const LOGIN_BY_PHONE_URL = '/sso/loginByPhone';
+/**
+ * 手机号和验证码登录
+ *
+ * @param {String} [phone] 手机号
+ * @param {String} [code] 验证码
+ * @returns {Promise}
+ */
+ export function loginByPhoneAndCode(phone, code) {
+  return Service.request.post({
+    url: LOGIN_BY_PHONE_URL,
+    params: {
+      phone,
+      code
     }
   }).then((res = {}) => {
     return res.data;
