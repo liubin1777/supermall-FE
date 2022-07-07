@@ -40,7 +40,7 @@ export default React.memo(({ data }) => {
           });
 
           return (
-            <div className={itemStyle} data-idx={idx} data-name={item.name} onClick={onClick}>
+            <div className={itemStyle} key={idx} data-idx={idx} data-name={item.name} onClick={onClick}>
               {item.name}
             </div>
           );

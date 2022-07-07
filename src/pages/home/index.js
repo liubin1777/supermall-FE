@@ -5,16 +5,22 @@ import SearchBar from './components/SearchBar';
 import Tabs from './components/Tabs';
 import Banner from './components/Banner';
 import KingPie from './components/KingPie';
+import ActivityCardList from './components/ActivityCardList';
 
 export default function Index() {
   return (
-    <div>
+    <div className={styles.page}>
       <div className={styles['top-background']} />
-      <TopTab />
-      <SearchBar />
-      <Tabs />
-      <Banner />
-      <KingPie />
+      <div className={styles['top-content']}>
+        <TopTab />
+        <SearchBar />
+        <Tabs />
+      </div>
+      <div className={styles['middle-content']}>
+        <Banner />
+        <KingPie />
+        <ActivityCardList />
+      </div>
       <TabBar />
     </div>
   );

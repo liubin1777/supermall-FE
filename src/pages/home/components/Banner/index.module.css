@@ -1,9 +1,6 @@
 .swiper {
   width: 100%;
-  border-radius: 22rem 22rem 0 0;
-  background: white;
-  padding-top: 22rem !important;
-  padding-bottom: 2rem !important;
+  background: transparent;
 }
 
 .swiper-slide {

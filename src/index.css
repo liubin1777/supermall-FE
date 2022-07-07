@@ -13,13 +13,31 @@ html {
   font-size: 0.13333333vw;
 }
 
+* {
+  box-sizing: border-box;
+
+  /* 解决 iOS 和 Android 点击高亮问题 */
+  -webkit-tap-height-color: transprent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  /* For some Androids */
+}
+
+/* 解决 Android 上的 select 有灰色背景 */
+select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+}
+
+/* div:active{
+  box-shadow: inset 0 5px 10px #B41313,inset 0 -5px 10px #B41313;
+} */
+
 a {
   color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 #page {

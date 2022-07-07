@@ -1,0 +1,8 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  background: transparent;
+  padding: 10rem;
+}

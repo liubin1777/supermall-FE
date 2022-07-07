@@ -38,6 +38,7 @@ export default React.memo(({ data, onClickCallBack }) => {
         return (
           <div
             className={itemStyle}
+            key={idx}
             data-idx={idx}
             data-name={item.name}
             onClick={onClick}>

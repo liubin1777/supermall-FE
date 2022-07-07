@@ -10,9 +10,9 @@ import 'swiper/css/pagination';
  * @return {Object} ReactElement
  */
 export default React.memo(({ data }) => {
-  if (!data) {
-    return null;
-  }
+  // if (!data) {
+  //   return null;
+  // }
 
   // 点击回调
   function onClick() {
@@ -29,9 +29,9 @@ export default React.memo(({ data }) => {
       </div>
       {/* 商品列表 */}
       <div className={styles.goods}>
-        {new Array(2).fill(1).map((item) => {
+        {new Array(2).fill(1).map((item, idx) => {
           return (
-            <div className={styles['item-layout']}>
+            <div className={styles['item-layout']} key={idx}>
               <div className={styles.item}>
                 <img
                   className={styles['goods-img']}
