@@ -1343,6 +1343,56 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
+"@egjs/children-differ@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@egjs/children-differ/-/children-differ-1.0.1.tgz#5465fa80671d5ca3564ebe912f48b05b3e8a14fd"
+  integrity sha512-DRvyqMf+CPCOzAopQKHtW+X8iN6Hy6SFol+/7zCUiE5y4P/OB8JP8FtU4NxtZwtafvSL4faD5KoQYPj3JHzPFQ==
+  dependencies:
+    "@egjs/list-differ" "^1.0.0"
+
+"@egjs/component@^3.0.0", "@egjs/component@^3.0.1":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@egjs/component/-/component-3.0.2.tgz#c56794fcf1b2cb2768d09b021444779e54d0de1b"
+  integrity sha512-Mze3mwEE19+dERrimg0JVLtpOHG4AC+LOuKqvF4qGZjn0k23ZbNI7b/gy1LFR63LigC2b8k70aDjy8xoT+WNPA==
+
+"@egjs/grid@~1.10.1":
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/@egjs/grid/-/grid-1.10.1.tgz#86a2374fb32366458cfea4992332452036221380"
+  integrity sha512-U+lualVYqX/1jTzFEY0j7TqmrxYgIvkooKGSbLKB9qyt8wzZVmuJdltgmJ5FKv3Uw4BJDqeMo2sjz69YHu/cDw==
+  dependencies:
+    "@egjs/children-differ" "^1.0.1"
+    "@egjs/component" "^3.0.0"
+    "@egjs/imready" "^1.3.0"
+
+"@egjs/imready@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@egjs/imready/-/imready-1.3.0.tgz#76a7df9d1a77c008bcd33942d207d39d0ce2f6fa"
+  integrity sha512-h6qxQup/ZJxEJkDMuyR6yuJ9jsuVan7EyQ8Xa0WkTWAr3HtUYjtDHOCjJvhFg50Xv3C+TkfYj4Mxmkz7zNePSA==
+  dependencies:
+    "@egjs/component" "^3.0.1"
+
+"@egjs/infinitegrid@~4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@egjs/infinitegrid/-/infinitegrid-4.5.0.tgz#97d878262118231ac99ec7dfea32c8967df21951"
+  integrity sha512-/yM2k4HBnKFL8c7/EDqheFGEjHZoQyAa4AfXTr+y7LQObga/M+pt9+kebKeqvHv9MvYJcIc5Qyb5MfavdHAKZw==
+  dependencies:
+    "@egjs/children-differ" "^1.0.1"
+    "@egjs/component" "^3.0.0"
+    "@egjs/grid" "~1.10.1"
+    "@egjs/list-differ" "^1.0.0"
+
+"@egjs/list-differ@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@egjs/list-differ/-/list-differ-1.0.0.tgz#2277aff52e3e4bd9318d5c30ffc3ba3b6216f05e"
+  integrity sha512-HsbMKc0ZAQH+EUeCmI/2PvTYSybmkaWwakU8QGDYYgMVIg9BQ5sM0A0Nnombjxo2+JzXHxmH+jw//yGX+y6GYw==
+
+"@egjs/react-infinitegrid@latest":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@egjs/react-infinitegrid/-/react-infinitegrid-4.5.0.tgz#29102046716bba4911fa5916731dcb3ebd6fb034"
+  integrity sha512-eHuiyZhIZHFCERE8f+GnbPnTF1A4RxShASDrdCOnr2ZCXZpu9tYipmsU3sdWCbKcK94EelcgVgIpTCk7d1irrQ==
+  dependencies:
+    "@egjs/infinitegrid" "~4.5.0"
+
 "@eslint/eslintrc@^1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-1.3.0.tgz#29f92c30bb3e771e4a2048c95fa6855392dfac4f"

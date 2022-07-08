@@ -1,9 +1,5 @@
 import * as React from 'react';
 import styles from './index.module.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Autoplay } from 'swiper';
 
 /**
  * 商品组件
@@ -12,9 +8,9 @@ import { Autoplay } from 'swiper';
  * @return {Object} ReactElement
  */
 export default React.memo(({ data }) => {
-  if (!data) {
-    return null;
-  }
+  // if (!data) {
+  //   return null;
+  // }
 
   // 点击回调
   function onClick() {
@@ -23,10 +19,10 @@ export default React.memo(({ data }) => {
 
   console.log('[SuperMall] GoodsCard|render');
   return (
-    <div className={styles.root}>
+    <div className={styles.root} onClick={onClick}>
       {/* 商品图片 */}
       <div className={styles['cover-container']}>
-        <img className={styles.img} src={data.img} />
+        <img className={styles.img} src="http://127.0.0.1:8080/assets/home/goodscard/img-goods-card-feihe.png" />
       </div>
       {/* 商品信息 */}
       <div className={styles.info}>
@@ -42,7 +38,8 @@ export default React.memo(({ data }) => {
             </div>
           </div>
           {/* 标题 */}
-          {data.title}
+          {/* {data.title} */}
+          欧舒丹甜蜜樱花沐浴护肤套装沐浴啫喱250ml+润肤露
         </div>
 
         {/* 价格信息 */}

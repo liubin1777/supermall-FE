@@ -6,6 +6,7 @@ import Tabs from './components/Tabs';
 import Banner from './components/Banner';
 import KingPie from './components/KingPie';
 import ActivityCardList from './components/ActivityCardList';
+import GoodsCardList from './components/GoodsCardList';
 
 export default function Index() {
   return (
@@ -20,6 +21,7 @@ export default function Index() {
         <Banner />
         <KingPie />
         <ActivityCardList />
+        <GoodsCardList />
       </div>
       <TabBar />
     </div>
