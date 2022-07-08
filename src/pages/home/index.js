@@ -6,6 +6,7 @@ import Tabs from './components/Tabs';
 import Banner from './components/Banner';
 import KingPie from './components/KingPie';
 import ActivityCardList from './components/ActivityCardList';
+import ChannelTab from './components/ChannelTab';
 import GoodsCardList from './components/GoodsCardList';
 
 export default function Index() {
@@ -21,6 +22,7 @@ export default function Index() {
         <Banner />
         <KingPie />
         <ActivityCardList />
+        <ChannelTab />
         <GoodsCardList />
       </div>
       <TabBar />
