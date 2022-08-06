@@ -18,8 +18,12 @@ const routerPaths = [
     page: import('./pages/me')
   },
   {
-    path: '/order-list',
-    page: import('./pages/order-list')
+    path: '/cart',
+    page: import('./pages/cart')
+  },
+  {
+    path: '/cart',
+    page: import('./pages/goods-detail')
   },
   {
     path: '/login',
