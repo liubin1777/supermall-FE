@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from './index.module.css';
 import mockData from './mock';
+import PriceLabel from '@component/PriceLabel';
 
 /**
  * GoodsPrice 商品Price组件
@@ -23,8 +24,12 @@ export default React.memo(({ data }) => {
     <div className={styles.root}>
       <div className={styles['row-price-container']}>
         <div className={styles['row-price-container-left']}>
-        <div className={styles['row-price-container-left-origin']}></div>
-        <div className={styles['row-price-container-left-real']}></div>
+        <div className={styles['row-price-container-left-origin']}>
+          <PriceLabel price='399.00' size='52'/>
+        </div>
+        <div className={styles['row-price-container-left-real']}>
+          券后<PriceLabel price='289.00' size='42' color='white'/>
+        </div>
         </div>
         <div className={styles['row-price-container-right']}>月销1000+</div>
       </div>

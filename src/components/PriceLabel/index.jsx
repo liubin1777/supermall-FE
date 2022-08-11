@@ -8,7 +8,7 @@ import mockData from './mock';
  * PriceLabel组件
  *
  * @param {string} price: 价格 649.00
- * @param {float} size: 字体大小
+ * @param {float|string} size: 字体大小
  * @param {string} price: 字体颜色
  * @return {Object} ReactElement
  */

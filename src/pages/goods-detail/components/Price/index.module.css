@@ -1,17 +1,34 @@
 .root {
+  overflow: hidden;
   margin: 24rem 20rem 0 20rem;
   border-radius: 20rem;
   background-color: white;
+  min-height: 200rem;
+  padding: 20rem;
 }
 
 .row-price-container {
   display: flex;
   align-items: center;
+  margin-top: 30rem;
 }
 
 .row-price-container-left {
   display: flex;
+  flex-grow: 1;
   align-items: center;
+}
+
+.row-price-container-left-real {
+  display: inline-flex;
+  align-items: center;
+  height: 54rem;
+  border-radius: 27rem;
+  padding: 0 16rem;
+  margin-left: 18rem;
+  font-size: 32rem;
+  background-color: #E61F00;
+  color: white;
 }
 
 .row-price-container-right {
