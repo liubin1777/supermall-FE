@@ -4,7 +4,7 @@ import mockData from './mock';
 import formatData from './format';
 
 export default {
-  title: 'SuperMall/GoodsBanner',
+  title: 'SuperMall/商品详情页/Banner',
   component: Component,
   argTypes: {
     backgroundColor: { control: 'color' },

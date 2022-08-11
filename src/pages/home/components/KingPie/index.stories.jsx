@@ -4,7 +4,7 @@ import mockData from './mock';
 import formatData from './format';
 
 export default {
-  title: 'SuperMall/KingPie',
+  title: 'SuperMall/首页/KingPie',
   component: Component,
   argTypes: {
     backgroundColor: { control: 'color' },

@@ -4,7 +4,7 @@ import mockData from './mock';
 import formatData from './format';
 
 export default {
-  title: 'SuperMall/ChannelTab',
+  title: 'SuperMall/首页/ChannelTab',
   component: Component,
   argTypes: {
     backgroundColor: { control: 'color' },
