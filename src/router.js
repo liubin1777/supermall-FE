@@ -6,7 +6,7 @@ import {
   Route,
 } from 'react-router-dom';
 import service from '@root/service';
-import Loading from './components/loading';
+import Loading from './components/Loading';
 
 const routerPaths = [
   {

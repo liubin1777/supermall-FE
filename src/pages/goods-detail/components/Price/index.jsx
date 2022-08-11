@@ -20,6 +20,14 @@ export default React.memo(({ data }) => {
 
   console.log('[SuperMall] GoodsPrice|render');
   return (
-    <div>11</div>
+    <div className={styles.root}>
+      <div className={styles['row-price-container']}>
+        <div className={styles['row-price-container-left']}>
+        <div className={styles['row-price-container-left-origin']}></div>
+        <div className={styles['row-price-container-left-real']}></div>
+        </div>
+        <div className={styles['row-price-container-right']}>月销1000+</div>
+      </div>
+    </div>
   );
 });

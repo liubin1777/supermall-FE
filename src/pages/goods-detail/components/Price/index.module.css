@@ -1,33 +1,20 @@
-.swiper {
-  width: 100%;
-  height: 712rem;
+.root {
+  margin: 24rem 20rem 0 20rem;
+  border-radius: 20rem;
+  background-color: white;
 }
 
-.swiper-slide {
-  background: transparent;
+.row-price-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
+  align-items: center;
 }
 
-.img {
-  width: 100%;
-  height: 712rem;
-  object-fit: cover;
+.row-price-container-left {
+  display: flex;
+  align-items: center;
 }
 
-.page-number {
-  position: absolute;
-  bottom: 12rem;
-  right: 16rem;
-  background-color: rgba(0, 0, 0, 0.1);
-  height: 34rem;
-  line-height: 34rem;
-  padding: 0 10rem;
-  font-size: 20rem;
-  font-weight: bold;
-  color: white;
-  z-index: 100;
-  border-radius: 17rem;
+.row-price-container-right {
+  color: #7F7F7F;
+  font-size: 28rem;
 }
