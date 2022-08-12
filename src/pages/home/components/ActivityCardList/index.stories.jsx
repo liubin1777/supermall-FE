@@ -4,7 +4,7 @@ import mockData from './mock';
 import formatData from './format';
 
 export default {
-  title: 'SuperMall/首页/ActivityCardList',
+  title: 'SuperMall/HomePage/ActivityCardList',
   component: Component,
   argTypes: {
     backgroundColor: { control: 'color' },
