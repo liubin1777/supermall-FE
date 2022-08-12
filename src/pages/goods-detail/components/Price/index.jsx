@@ -22,6 +22,8 @@ export default React.memo(({ data }) => {
   console.log('[SuperMall] GoodsPrice|render');
   return (
     <div className={styles.root}>
+
+      {/* row-价格 */}
       <div className={styles['row-price-container']}>
         <div className={styles['row-price-container-left']}>
         <div className={styles['row-price-container-left-origin']}>
@@ -33,6 +35,9 @@ export default React.memo(({ data }) => {
         </div>
         <div className={styles['row-price-container-right']}>月销1000+</div>
       </div>
+
+      {/* row-券 */}
+      <div className=''></div>
     </div>
   );
 });
