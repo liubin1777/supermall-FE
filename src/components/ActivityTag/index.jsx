@@ -1,8 +1,5 @@
 import * as React from 'react';
 import styles from './index.module.css';
-import classNames from 'classnames';
-import Service from '@service';
-import mockData from './mock';
 
 /**
  * ActivityTag组件

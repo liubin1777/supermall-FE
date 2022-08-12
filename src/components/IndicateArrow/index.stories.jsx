@@ -4,7 +4,7 @@ import mockData from './mock';
 import formatData from './format';
 
 export default {
-  title: 'SuperMall/Common/PriceLabel',
+  title: 'SuperMall/Common/IndicateArrow',
   component: Component,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -16,13 +16,12 @@ const formatedMockData = formatData(mockData.data);
 
 export const Primary = Template.bind({});
 Primary.args = {
-  price: '649.00',
-  size: 52,
+  desc: '去领券',
+  size: 50,
+  color: '#E61F00'
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  price: '649.00',
-  size: 20,
-  color: 'green',
+export const OnlyArrow = Template.bind({});
+OnlyArrow.args = {
+  size: 50,
 };

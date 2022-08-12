@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from './index.module.css';
 import mockData from './mock';
 import PriceLabel from '@component/PriceLabel';
+import ActivityTag from '@component/ActivityTag';
 
 /**
  * GoodsPrice 商品Price组件
