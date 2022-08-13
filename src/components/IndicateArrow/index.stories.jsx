@@ -17,7 +17,7 @@ const formatedMockData = formatData(mockData.data);
 export const Primary = Template.bind({});
 Primary.args = {
   desc: '去领券',
-  size: 50,
+  size: 22,
   color: '#E61F00'
 };
 

@@ -11,7 +11,7 @@ import styles from './index.module.css';
  */
 export default React.memo(({ desc = '', size, color }) => {
   if (!desc) {
-    return;
+    return null;
   }
 
   console.log('[SuperMall] ActivityTag|render');

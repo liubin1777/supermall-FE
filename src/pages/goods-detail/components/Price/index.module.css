@@ -4,22 +4,21 @@
   border-radius: 20rem;
   background-color: white;
   min-height: 200rem;
-  padding: 20rem;
+  padding: 30rem 20rem;
 }
 
-.row-price-container {
+.row-price {
   display: flex;
   align-items: center;
-  margin-top: 30rem;
 }
 
-.row-price-container-left {
+.row-price-left {
   display: flex;
   flex-grow: 1;
   align-items: center;
 }
 
-.row-price-container-left-real {
+.row-price-left-real {
   display: inline-flex;
   align-items: center;
   height: 54rem;
@@ -31,7 +30,24 @@
   color: white;
 }
 
-.row-price-container-right {
+.row-price-right {
   color: #7F7F7F;
   font-size: 28rem;
+}
+
+.row-coupon {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18rem;
+}
+
+.row-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 32rem;
+  font-weight: bold;
+  margin-top: 20rem;
+  line-height: 45rem;
 }
