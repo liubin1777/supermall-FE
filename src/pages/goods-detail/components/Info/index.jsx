@@ -6,7 +6,7 @@ import ActivityTag from '@component/ActivityTag';
 import IndicateArrow from '@component/IndicateArrow';
 
 /**
- * GoodsPrice 商品Price组件
+ * GoodsInfo 商品信息组件
  *
  * @param {array} data: 数据列表
  * @return {Object} ReactElement
@@ -18,10 +18,10 @@ export default React.memo(({ data }) => {
 
   // 点击回调
   function onClick() {
-    console.log('[SuperMall] GoodsPrice|onClick');
+    console.log('[SuperMall] GoodsInfo|onClick');
   }
 
-  console.log('[SuperMall] GoodsPrice|render');
+  console.log('[SuperMall] GoodsInfo|render');
   return (
     <div className={styles.root}>
       {/* row-价格 */}

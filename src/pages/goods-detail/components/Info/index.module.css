@@ -1,0 +1,55 @@
+.root {
+  overflow: hidden;
+  margin: 24rem 20rem 0 20rem;
+  border-radius: 20rem;
+  background-color: white;
+  min-height: 200rem;
+  padding: 30rem 20rem;
+}
+
+.row-price {
+  display: flex;
+  align-items: center;
+}
+
+.row-price-left {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.row-price-left-real {
+  display: inline-flex;
+  align-items: center;
+  height: 54rem;
+  border-radius: 27rem;
+  padding: 0 16rem;
+  margin-left: 18rem;
+  font-size: 32rem;
+  background-color: #E61F00;
+  color: white;
+}
+
+.row-price-right {
+  color: #7F7F7F;
+  font-size: 28rem;
+}
+
+.row-coupon {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18rem;
+}
+
+.row-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 32rem;
+  margin-top: 20rem;
+  line-height: 45rem;
+  color: #201C1C;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+}

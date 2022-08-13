@@ -4,7 +4,7 @@
   border-radius: 20rem;
   background-color: white;
   min-height: 200rem;
-  padding: 30rem 20rem;
+  padding: 20rem;
 }
 
 .row-price {
@@ -47,7 +47,9 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   font-size: 32rem;
-  font-weight: bold;
   margin-top: 20rem;
   line-height: 45rem;
+  color: #201C1C;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
 }

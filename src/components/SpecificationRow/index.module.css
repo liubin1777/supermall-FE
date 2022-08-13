@@ -1,0 +1,27 @@
+.root {
+  display: flex;
+  align-items: center;
+  height: 64rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  font-size: 26rem;
+}
+
+.title {
+  color: #7F7F7F;
+  flex-shrink: 0;
+}
+
+.desc {
+  flex-grow: 1;
+  color: #201C1C;
+  margin-left: 34rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.arrow {
+  flex-shrink: 0;
+}
