@@ -1,0 +1,17 @@
+.root {
+  overflow: hidden;
+  margin: 24rem 20rem 0 20rem;
+  border-radius: 20rem;
+  background-color: white;
+  min-height: 200rem;
+  padding: 20rem;
+}
+
+.row-count {
+  display: flex;
+  justify-content: space-between;
+  font-size: 32rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #201C1C;
+}
