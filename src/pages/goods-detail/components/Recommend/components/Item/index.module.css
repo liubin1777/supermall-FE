@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 218rem;
+  margin-bottom: 20rem;
+}
+
+.img {
+  width: 218rem;
+  height: 218rem;
+}
+
+.title {
+  margin: 13rem 0;
+  font-size: 22rem;
+  font-weight: 400;
+  color: #201C1C;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

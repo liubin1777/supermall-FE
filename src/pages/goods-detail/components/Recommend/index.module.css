@@ -1,0 +1,42 @@
+.root {
+  overflow: hidden;
+  margin: 24rem 20rem 0 20rem;
+  border-radius: 20rem;
+  background-color: white;
+  min-height: 200rem;
+  padding: 20rem 20rem 10rem 20rem;
+}
+
+.shop {
+  display: flex;
+  margin-bottom: 16rem;
+}
+
+.logo {
+  width: 92rem;
+  height: 92rem;
+}
+
+.name-container {
+  display: flex;
+  margin-left: 16rem;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+
+.name {
+  font-size: 32rem;
+  font-weight: 500;
+  color: #201C1C;
+}
+
+.rating {
+  color: #E61F00 !important;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
