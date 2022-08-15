@@ -32,8 +32,8 @@ export default React.memo(({ data }) => {
       </div>
       {/* row-推荐商品 */}
       <div className={styles.list}>
-        {data.list.map((itemData) => {
-          return <Item data={itemData} />;
+        {data.list.map((itemData, idx) => {
+          return <Item data={itemData} key={idx}/>;
         })}
       </div>
     </div>

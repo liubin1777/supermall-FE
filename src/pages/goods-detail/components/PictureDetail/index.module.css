@@ -1,0 +1,20 @@
+.root {
+  overflow: hidden;
+  margin: 24rem 20rem 100rem 20rem;
+  border-radius: 20rem;
+  background-color: white;
+  min-height: 200rem;
+  padding: 20rem 20rem 10rem 20rem;
+}
+
+.name {
+  font-size: 32rem;
+  font-weight: 500;
+  color: #201C1C;
+  line-height: 45px;
+}
+
+.picture {
+  width: 100%;
+  height: auto;
+}
