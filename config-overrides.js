@@ -14,11 +14,12 @@ function customWebpackConfig(config) {
   debugger;
     // 别名扩展：https://webpack.docschina.org/configuration/resolve/
     const aliasExtension = {
-      '@root': path.resolve(__dirname, 'src'),
+      '@asset': path.resolve(__dirname, 'src/assets'),
       '@page': path.resolve(__dirname, 'src/pages'),
       '@component': path.resolve(__dirname, 'src/components'),
       '@service': path.resolve(__dirname, 'src/service'),
-      '@util': path.resolve(__dirname, 'src/util')
+      '@util': path.resolve(__dirname, 'src/util'),
+      '@root': path.resolve(__dirname, 'src'),
     }
     config.resolve.alias = {...config.resolve.alias, ...aliasExtension}
 

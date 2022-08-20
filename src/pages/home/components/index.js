@@ -1,0 +1,9 @@
+export { default as TabBar } from '@component/TabBar';
+export { default as TopTab } from './TopTab';
+export { default as SearchBar } from './SearchBar';
+export { default as Tabs } from './Tabs';
+export { default as Banner } from './Banner';
+export { default as KingPie } from './KingPie';
+export { default as ActivityCardList } from './ActivityCardList';
+export { default as ChannelTab } from './ChannelTab';
+export { default as GoodsCardList } from './GoodsCardList';

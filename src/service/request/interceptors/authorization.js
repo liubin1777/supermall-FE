@@ -1,4 +1,4 @@
-/*
+/**
  *  登录授权拦截器
  */
 import Service from '@service';
@@ -17,6 +17,8 @@ function requestInterceptor(config = {}) {
 function responseInterceptor(res = {}) {
   const { config = {}, data } = res;
   const { url = '' } = config;
+
+  // 判断是登录接口，保存登录态token信息
   if (url.indexOf(LOGIN_BY_PHONE_URL) !== -1 && data) {
     Service.store.setAuthorization(data);
   }

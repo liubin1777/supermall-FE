@@ -5,6 +5,9 @@
       "@root/*": [
         "./src/*"
       ],
+      "@asset/*": [
+        "./src/assets/*"
+      ],
       "@page/*": [
         "./src/page/*"
       ],

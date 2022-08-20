@@ -1,15 +1,25 @@
 import styles from './index.module.css';
-import TabBar from '@component/TabBar';
-import TopTab from './components/TopTab';
-import SearchBar from './components/SearchBar';
-import Tabs from './components/Tabs';
-import Banner from './components/Banner';
-import KingPie from './components/KingPie';
-import ActivityCardList from './components/ActivityCardList';
-import ChannelTab from './components/ChannelTab';
-import GoodsCardList from './components/GoodsCardList';
+import { useRequest } from 'ahooks';
+import { getHomeContent } from './service';
+import {
+  TopTab,
+  SearchBar,
+  Tabs,
+  Banner,
+  KingPie,
+  ActivityCardList,
+  ChannelTab,
+  GoodsCardList,
+  TabBar,
+} from './components';
+
 
 export default function Index() {
+
+  const { data, error, loading } = useRequest(getHomeContent);
+
+  console.log('[SuperMall] Page|Index|data = ',data, error, loading);
+
   return (
     <div className={styles.page}>
       <div className={styles['top-background']} />

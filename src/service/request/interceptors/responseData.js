@@ -1,4 +1,4 @@
-/*
+/**
  *  返回数据处理拦截器
  */
 function responseInterceptor(res) {

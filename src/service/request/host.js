@@ -13,7 +13,7 @@ const HOST_ENVS = {
 };
 
 // 默认线上环境
-const ENV = process.env.NODE_ENV === 'development' ? 'dev' : 'pro' || 'pro';
+const ENV = process.env.NODE_ENV === 'development' ? 'dev' : 'pro';
 
 export function getEnv() {
   return ENV;
