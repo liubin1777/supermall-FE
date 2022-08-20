@@ -21,7 +21,7 @@ export default React.memo(({ data }) => {
         <div className={styles.item} style={{ marginLeft: '10rem' }}>
           <img
             className={styles.icon}
-            src={'http://127.0.0.1:8080/assets/goods-detail/icon-shop.png'}
+            src={'http://127.0.0.1:8090/assets/goods-detail/icon-shop.png'}
             alt=""
           />
           <div className={styles.name}>店铺</div>
@@ -30,7 +30,7 @@ export default React.memo(({ data }) => {
         <div className={styles.item} style={{ marginLeft: '50rem' }}>
           <img
             className={styles.icon}
-            src={'http://127.0.0.1:8080/assets/goods-detail/icon-service.png'}
+            src={'http://127.0.0.1:8090/assets/goods-detail/icon-service.png'}
             alt=""
           />
           <div className={styles.name}>客服</div>
@@ -39,7 +39,7 @@ export default React.memo(({ data }) => {
         <div className={styles.item} style={{ marginLeft: '50rem' }}>
           <img
             className={styles.icon}
-            src={'http://127.0.0.1:8080/assets/goods-detail/icon-cart.png'}
+            src={'http://127.0.0.1:8090/assets/goods-detail/icon-cart.png'}
             alt=""
           />
           <div className={styles.name}>购物车</div>

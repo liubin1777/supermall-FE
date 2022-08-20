@@ -22,7 +22,7 @@ export default React.memo(({ data }) => {
     <div className={styles.root} onClick={onClick}>
       {/* 商品图片 */}
       <div className={styles['cover-container']}>
-        <img className={styles.img} src="http://127.0.0.1:8080/assets/home/goodscard/img-goods-card-feihe.png" />
+        <img className={styles.img} src="http://127.0.0.1:8090/assets/home/goodscard/img-goods-card-feihe.png" />
       </div>
       {/* 商品信息 */}
       <div className={styles.info}>
@@ -33,7 +33,7 @@ export default React.memo(({ data }) => {
             <div className={styles['label-layout']}>
               <img
                 className={styles.label}
-                src="http://127.0.0.1:8080/assets/home/goodscard/label-chaoshi.png"
+                src="http://127.0.0.1:8090/assets/home/goodscard/label-chaoshi.png"
               />
             </div>
           </div>
