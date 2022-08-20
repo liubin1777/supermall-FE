@@ -2,9 +2,9 @@ import * as React from 'react';
 import styles from './index.module.css';
 import classNames from 'classnames';
 
-const IMAGE_SEARCH = 'http://127.0.0.1:8090/assets/home/img-search.png';
-const IMAGE_CAMERA = 'http://127.0.0.1:8090/assets/home/img-camera.png';
-const IMAGE_SCANNER = 'http://127.0.0.1:8090/assets/home/img-scanner.png';
+const IMAGE_SEARCH = 'http://127.0.0.1:9090/assets/home/img-search.png';
+const IMAGE_CAMERA = 'http://127.0.0.1:9090/assets/home/img-camera.png';
+const IMAGE_SCANNER = 'http://127.0.0.1:9090/assets/home/img-scanner.png';
 
 /**
  * SearchBar组件

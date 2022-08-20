@@ -1,12 +1,12 @@
 export default {
   data: {
     title: '欧舒丹甜蜜樱花沐浴护肤套装沐浴啫喱250ml+润肤露',
-    img: 'http://127.0.0.1:8090/assets/home/goodscard/img-goods-card-feihe.png',
+    img: 'http://127.0.0.1:9090/assets/home/goodscard/img-goods-card-feihe.png',
     price: "44090",
     labels: [
       {
         name: '自营',
-        img: 'http://127.0.0.1:8090/assets/home/goodscard/label-ziying.png',
+        img: 'http://127.0.0.1:9090/assets/home/goodscard/label-ziying.png',
         type: 1,
       }
     ],

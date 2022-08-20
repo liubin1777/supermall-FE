@@ -16,7 +16,7 @@
     "swiper": "^8.1.5"
   },
   "scripts": {
-    "cdn": "http-server -p 8090 ./cdn",
+    "cdn": "http-server -p 9090 ./cdn",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
