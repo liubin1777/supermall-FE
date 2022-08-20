@@ -1,0 +1,11 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.desc {
+  color: rgb(176, 176, 176);
+  font-size: 30rem;
+}

@@ -4,6 +4,13 @@
   height: 100vh;
 }
 
+.error {
+  height: 100%;
+  border-radius: 22rem 22rem 0 0;
+  background-color: white;
+  padding-top: 200rem;
+}
+
 .top-background {
   position: absolute;
   top: 0;

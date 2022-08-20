@@ -7,3 +7,5 @@ export { default as KingPie } from './KingPie';
 export { default as ActivityCardList } from './ActivityCardList';
 export { default as ChannelTab } from './ChannelTab';
 export { default as GoodsCardList } from './GoodsCardList';
+export { default as Loading } from '@component/Loading';
+export { default as Error } from '@component/Error';
