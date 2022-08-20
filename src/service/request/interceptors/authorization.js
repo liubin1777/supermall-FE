@@ -1,5 +1,8 @@
+/*
+ *  登录授权拦截器
+ */
 import Service from '@service';
-import { LOGIN_BY_PHONE_URL } from '../login';
+import { LOGIN_BY_PHONE_URL } from '../../api/user/login';
 
 function requestInterceptor(config = {}) {
   const { headers = {}, url = '' } = config;
@@ -7,7 +10,6 @@ function requestInterceptor(config = {}) {
   const data = Service.store.getAuthorization();
   if (data && data.token && data.tokenHead) {
     headers.Authorization = `${data.tokenHead}${data.token}`;
-    debugger;
   }
   return config;
 }
@@ -26,10 +28,10 @@ function exception(error) {
   return Promise.reject(error);
 }
 
-setTimeout(() => {
+export default (axios) => {
   // 请求拦截
-  Service.request.instance.interceptors.request.use(requestInterceptor, exception);
+  axios.interceptors.request.use(requestInterceptor, exception);
 
   // 响应拦截
-  Service.request.instance.interceptors.response.use(responseInterceptor, exception);
-}, 0);
+  axios.interceptors.response.use(responseInterceptor, exception);
+};

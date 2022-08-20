@@ -1,5 +1,6 @@
 import Service from '@service';
-import './interceptors/authorization';
+
+export const LOGIN_BY_PHONE_URL = '/sso/loginByPhone';
 
 /**
  * 获取验证码
@@ -18,7 +19,6 @@ export function getAuthCode(phone) {
   });
 }
 
-export const LOGIN_BY_PHONE_URL = '/sso/loginByPhone';
 /**
  * 手机号和验证码登录
  *

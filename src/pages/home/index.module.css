@@ -20,7 +20,7 @@
 
 .middle-content {
   padding-top: 22rem;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .middle-content::after {

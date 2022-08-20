@@ -8,7 +8,7 @@ const HOST_ENVS = {
   // 开发环境
   dev: {
     api: 'http://127.0.0.1:8085', // 接口host
-    asset: 'http://127.0.0.1:1337', // 图片host
+    asset: 'http://127.0.0.1:9090', // 图片host
   },
 };
 
