@@ -1,8 +1,14 @@
 export default (rawData) => {
 
   if (!rawData || rawData.length === 0) {
-    return [];
+    return null;
   }
 
-  return rawData;
+  return rawData.map( item => {
+    const { pic, url } = item;
+    return {
+      img: pic,
+      url
+    }
+  })
 }

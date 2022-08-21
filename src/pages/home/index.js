@@ -1,6 +1,6 @@
 import styles from './index.module.css';
 import { useRequest } from 'ahooks';
-import { getHomeContent } from './service';
+import { getHomeContentAPI } from './service';
 import {
   TopTab,
   SearchBar,
@@ -16,14 +16,14 @@ import {
 } from './components';
 
 export default function Index() {
-  const { data, error, loading } = useRequest(getHomeContent);
+  const { data: apiData, error: apiError, loading: apiLoading } = useRequest(getHomeContentAPI);
 
-  console.log('[SuperMall] Page|Index|data = ', data, error, loading);
+  console.log('[SuperMall] Page|Index|data = ', apiData, apiError, apiLoading);
 
   let content = null;
-  if (loading) {
+  if (apiLoading) {
     content = <Loading />;
-  } else if (true) {
+  } else if (apiError) {
     content = (
       <div className={styles.error}>
         <Error />
@@ -33,7 +33,7 @@ export default function Index() {
     content = (
       <>
         <div className={styles['middle-content']}>
-          <Banner />
+          <Banner data={apiData.bannerData}/>
           <KingPie />
           <ActivityCardList />
           <ChannelTab />

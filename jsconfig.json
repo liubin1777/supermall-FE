@@ -27,5 +27,6 @@
         "src/util/*"
       ]
     }
-  }
+  },
+  "exclude": ["node_modules", "dist"],
 }
