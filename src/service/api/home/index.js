@@ -8,10 +8,30 @@ import Service from '@service';
  *
  * @returns {Promise}
  */
-export function getHomeContent() {
-  return Service.request.get({
-    url: '/home/content',
-  }).then((res = {}) => {
-    return res.data;
-  });
+export function fetchHomeContentAPI() {
+  return Service.request
+    .get({
+      url: '/home/content',
+    })
+    .then((res = {}) => {
+      return res.data;
+    });
+}
+
+/**
+ * 获取推荐商品列表
+ *
+ * @returns {Promise}
+ */
+export function fetchHomeRecommendProductListAPI(
+  params = { pageNum: 1, pageSize: 10 }
+) {
+  return Service.request
+    .get({
+      url: '/home/recommendProductList',
+      params,
+    })
+    .then((res = {}) => {
+      return res.data;
+    });
 }

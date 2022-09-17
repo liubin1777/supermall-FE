@@ -1,6 +1,10 @@
+/**
+ * 首页
+*/
+import React, { useEffect } from 'react';
 import styles from './index.module.css';
 import { useRequest } from 'ahooks';
-import { getHomeContentAPI } from './service';
+import { fetchHomeContentData } from './service/fetchData';
 import {
   TopTab,
   SearchBar,
@@ -16,12 +20,25 @@ import {
 } from './components';
 
 export default function Index() {
-  const { data: apiData, error: apiError, loading: apiLoading } = useRequest(getHomeContentAPI);
+  const {
+    data: apiData,
+    error: apiError,
+    loading: apiLoading,
+    run: fetchData,
+  } = useRequest(fetchHomeContentData, { manual: true });
 
-  console.log('[SuperMall] Page|Index|data = ', apiData, apiError, apiLoading);
+  useEffect(() => {
+    console.log(
+      '[SuperMall] Page|Index|onLoad|fetchData = ',
+      apiData,
+      apiError,
+      apiLoading
+    );
+    fetchData();
+  }, []);
 
   let content = null;
-  if (apiLoading) {
+  if (apiLoading || !apiData) {
     content = <Loading />;
   } else if (apiError) {
     content = (
@@ -33,7 +50,7 @@ export default function Index() {
     content = (
       <>
         <div className={styles['middle-content']}>
-          <Banner data={apiData.bannerData}/>
+          <Banner data={apiData.bannerData} />
           <KingPie />
           <ActivityCardList />
           <ChannelTab />

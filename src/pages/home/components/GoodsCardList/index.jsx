@@ -1,7 +1,9 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import styles from './index.module.css';
 import GoodsCard from '../GoodsCard';
 import { MasonryInfiniteGrid } from '@egjs/react-infinitegrid';
+import { fetchHomeRecommendProductListData } from '../../service/fetchData';
+import { useRequest } from 'ahooks';
 
 /**
  * 商品组件列表
@@ -11,6 +13,22 @@ import { MasonryInfiniteGrid } from '@egjs/react-infinitegrid';
  */
 export default React.memo(({ data }) => {
   const [items, setItems] = React.useState(() => getItems(0, 10));
+  const {
+    data: apiData,
+    error: apiError,
+    loading: apiLoading,
+    run: fetchData,
+  } = useRequest(fetchHomeRecommendProductListData, { manual: true });
+
+  useEffect(() => {
+    console.log(
+      '[SuperMall] GoodsCardList|onLoad|fetchData = ',
+      apiData,
+      apiError,
+      apiLoading
+    );
+    fetchData();
+  }, []);
 
   console.log('[SuperMall] GoodsCardList|render');
   return (
@@ -28,8 +46,8 @@ export default React.memo(({ data }) => {
         onRenderComplete={(e) => {
           console.log('[SuperMall] GoodsCardList|onRenderComplete');
         }}>
-        {items.map((item ,idx) => (
-          <GoodsCard key={idx}/>
+        {items.map((item, idx) => (
+          <GoodsCard key={idx} />
         ))}
       </MasonryInfiniteGrid>
       ;
