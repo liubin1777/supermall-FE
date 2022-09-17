@@ -5545,6 +5545,13 @@
     "readable-stream" "^2.2.2"
     "typedarray" "^0.0.6"
 
+"conditional-compile-loader@^1.0.8":
+  "integrity" "sha512-JtUrFfsG/yfElTNvsB3meZ1WtdWADwmuA309hlbIiLzkF3fvI+B5SZFD79H87WfaoD1fHnQ4CJy8Sj7qZDPTyw=="
+  "resolved" "https://registry.npmjs.org/conditional-compile-loader/-/conditional-compile-loader-1.0.8.tgz"
+  "version" "1.0.8"
+  dependencies:
+    "loader-utils" "^2.0.0"
+
 "confusing-browser-globals@^1.0.11":
   "integrity" "sha512-JsPKdmh8ZkmnHxDk55FZ1TqVLvEQTvoByJZRN9jzI0UjxK/QgAmsphz7PGtqgPieQZ/CQcHWXCR7ATDNhGe+YA=="
   "resolved" "https://registry.npmjs.org/confusing-browser-globals/-/confusing-browser-globals-1.0.11.tgz"
@@ -8255,6 +8262,13 @@
   "resolved" "https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz"
   "version" "1.2.1"
 
+"ifdef-loader@^2.3.2":
+  "integrity" "sha512-kH9bHPrfIFxLpq3XEruJqSlHXch2nOljKIDRS/6MU5LDZTyHeaSWVf04wNYX+8RT+NDmeS8Vm5HwZ7akkXo8ig=="
+  "resolved" "https://registry.npmjs.org/ifdef-loader/-/ifdef-loader-2.3.2.tgz"
+  "version" "2.3.2"
+  dependencies:
+    "loader-utils" "^1.1.0"
+
 "iferr@^0.1.5":
   "integrity" "sha512-DUNFN5j7Tln0D+TxzloUjKB+CtVu6myn0JEFak6dG18mNt9YkQ6lzGCdafwofISZ1lLF3xRHJ98VKy9ynkcFaA=="
   "resolved" "https://registry.npmjs.org/iferr/-/iferr-0.1.5.tgz"
@@ -9433,6 +9447,13 @@
     "import-local" "^3.0.2"
     "jest-cli" "^27.5.1"
 
+"js-conditional-compile-loader@^1.0.16":
+  "integrity" "sha512-UMaBExwhhI6g5mymp0PH3wwZ0GhjL627H+Ynvf+1ebGIZuLl6leRUWwoPd+sT2Ayr08xN+ta7we8VMI59/SYWg=="
+  "resolved" "https://registry.npmjs.org/js-conditional-compile-loader/-/js-conditional-compile-loader-1.0.16.tgz"
+  "version" "1.0.16"
+  dependencies:
+    "loader-utils" "2.*"
+
 "js-cookie@^2.x.x":
   "integrity" "sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ=="
   "resolved" "https://registry.npmjs.org/js-cookie/-/js-cookie-2.2.1.tgz"
@@ -9698,6 +9719,15 @@
   "resolved" "https://registry.npmjs.org/loader-runner/-/loader-runner-4.3.0.tgz"
   "version" "4.3.0"
 
+"loader-utils@^1.1.0":
+  "integrity" "sha512-qH0WSMBtn/oHuwjy/NucEgbx5dbxxnxup9s4PVXJUDHZBQY+s0NWA9rJf53RBnQZxfch7euUui7hpoAPvALZdA=="
+  "resolved" "https://registry.npmjs.org/loader-utils/-/loader-utils-1.4.0.tgz"
+  "version" "1.4.0"
+  dependencies:
+    "big.js" "^5.2.2"
+    "emojis-list" "^3.0.0"
+    "json5" "^1.0.1"
+
 "loader-utils@^1.2.3":
   "integrity" "sha512-qH0WSMBtn/oHuwjy/NucEgbx5dbxxnxup9s4PVXJUDHZBQY+s0NWA9rJf53RBnQZxfch7euUui7hpoAPvALZdA=="
   "resolved" "https://registry.npmjs.org/loader-utils/-/loader-utils-1.4.0.tgz"
@@ -9707,7 +9737,7 @@
     "emojis-list" "^3.0.0"
     "json5" "^1.0.1"
 
-"loader-utils@^2.0.0":
+"loader-utils@^2.0.0", "loader-utils@2.*":
   "integrity" "sha512-TM57VeHptv569d/GKh6TAYdzKblwDNiumOdkFnejjD0XwTH87K90w3O7AiJRqdQoXygvi1VQTJTLGhJl7WqA7A=="
   "resolved" "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.2.tgz"
   "version" "2.0.2"
@@ -11915,18 +11945,6 @@
   "integrity" "sha512-kV/CThkXo6xyFEZUugw/+pIOywXcDbFYgSct5cT3gqlbkBE1SJdwy6UQoZvodiWF/ckQLZyDE/Bu1M6gVu5lVw=="
   "resolved" "https://registry.npmjs.org/q/-/q-1.5.1.tgz"
   "version" "1.5.1"
-
-"qrcode-terminal@^0.12.0":
-  "integrity" "sha512-EXtzRZmC+YGmGlDFbXKxQiMZNwCLEO6BANKXG4iCtSIM0yqc/pappSx3RIKr4r0uh5JsBckOXeKrB3Iz7mdQpQ=="
-  "resolved" "https://registry.npmjs.org/qrcode-terminal/-/qrcode-terminal-0.12.0.tgz"
-  "version" "0.12.0"
-
-"qrcode-webpack-plugin@^1.0.4":
-  "integrity" "sha512-HwsWFlXdfuKijKKdhzigkWNS7OOA62HBHXeZoiC/K+VNUjjBYuXOh8IEdtR4vSx6o39dnNGVRo3KgwL+gZQAgw=="
-  "resolved" "https://registry.npmjs.org/qrcode-webpack-plugin/-/qrcode-webpack-plugin-1.0.4.tgz"
-  "version" "1.0.4"
-  dependencies:
-    "qrcode-terminal" "^0.12.0"
 
 "qs@^6.10.0", "qs@^6.4.0", "qs@6.10.3":
   "integrity" "sha512-wr7M2E0OFRfIfJZjKGieI8lBKb7fRCH4Fv5KNPEs7gJ8jadvotdsS08PzOKR7opXhZ/Xkjtt3WF9g38drmyRqQ=="

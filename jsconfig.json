@@ -8,6 +8,9 @@
       "@asset/*": [
         "./src/assets/*"
       ],
+      "@config/*": [
+        "./src/config/*"
+      ],
       "@page/*": [
         "./src/page/*"
       ],
@@ -28,5 +31,5 @@
       ]
     }
   },
-  "exclude": ["node_modules", "dist"],
+  "exclude": ["node_modules", "dist"]
 }
