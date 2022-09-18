@@ -1,0 +1,5 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(234deg, #FEFEFC 0%, #F0F0F0 100%);
+}

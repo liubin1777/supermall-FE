@@ -1,9 +1,24 @@
-import './index.module.css';
+import styles from './index.module.css';
+import {
+  Banner,
+  Cart,
+  Evaluation,
+  Info,
+  Option,
+  PictureDetail,
+  Recommend
+} from './components';
 
-export default function OrderList() {
+export default function GoodsDetailPage() {
   return (
-    <div>
-      订单列表页面
+    <div className={styles.page}>
+      <Banner />
+      <Info />
+      <Option />
+      <Evaluation />
+      <Recommend />
+      <PictureDetail />
+      <Cart />
     </div>
   );
 }

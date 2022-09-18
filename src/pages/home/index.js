@@ -1,6 +1,6 @@
 /**
  * 首页
-*/
+ */
 import React, { useEffect } from 'react';
 import styles from './index.module.css';
 import { useRequest } from 'ahooks';
@@ -19,7 +19,7 @@ import {
   Error,
 } from './components';
 
-export default function Index() {
+export default function IndexPage() {
   const {
     data,
     error,
@@ -28,25 +28,20 @@ export default function Index() {
   } = useRequest(fetchHomeContentData, { manual: true });
 
   useEffect(() => {
-    console.log(
-      '[SuperMall] Page|Index|onLoad|fetchData = ',
-      data,
-      error,
-      loading
-    );
+    console.log('[SuperMall] Page|Index|onLoad|fetchData');
     fetchData();
   }, []);
 
   let content = null;
-  if (loading || !data) {
+  if (loading || !data) { // 展示loading
     content = <Loading />;
-  } else if (error) {
+  } else if (error) { // 展示错误
     content = (
       <div className={styles.error}>
         <Error />
       </div>
     );
-  } else {
+  } else { // 展示数据
     content = (
       <>
         <div className={styles['middle-content']}>
