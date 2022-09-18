@@ -25,7 +25,7 @@ const PaginationConfig = {
  */
 export default React.memo(({ data }) => {
   if (!data || data.length === 0) {
-    data = mockData.data;
+    return null;
   }
 
   // 点击回调
@@ -33,21 +33,21 @@ export default React.memo(({ data }) => {
     console.log('[SuperMall] GoodsBanner|onClick');
   }
 
-  // console.log('[SuperMall] GoodsBanner|render');
+  console.log('[SuperMall] GoodsBanner|render', data);
   return (
     // 容器
     <Swiper
       pagination={PaginationConfig}
       modules={[Pagination]}
       className={styles.swiper}>
-      {data.map((itemData, itemIdx) => (
+      {data.map((pic, idx) => (
         // 每页
         <SwiperSlide
           className={styles['swiper-slide']}
-          key={itemIdx}
+          key={idx}
           onClick={onClick}>
           {/* 图片 */}
-          <img className={styles.img} src={itemData.img} />
+          <img className={styles.img} src={pic} />
         </SwiperSlide>
       ))}
     </Swiper>

@@ -9,8 +9,8 @@ import mockData from './mock';
  * @return {Object} ReactElement
  */
 export default React.memo(({ data }) => {
-  if (!data) {
-    data = mockData.data;
+  if (!data || data.length == 0) {
+    return null;
   }
 
   // console.log('[SuperMall] GoodsPictureDetail|render');
@@ -22,8 +22,8 @@ export default React.memo(({ data }) => {
       </div>
       {/* row-推荐商品 */}
       <div className={styles.list}>
-        {data.list.map((item, idx) => {
-          return <img className={styles.picture} src={item.img} key={idx}/>
+        {data.map((pic, idx) => {
+          return <img className={styles.picture} src={pic} key={idx}/>
         })}
       </div>
     </div>

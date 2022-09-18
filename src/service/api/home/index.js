@@ -12,9 +12,6 @@ export function fetchHomeContentAPI() {
   return Service.request
     .get({
       url: '/home/content',
-    })
-    .then((res = {}) => {
-      return res.data;
     });
 }
 
@@ -31,8 +28,5 @@ export function fetchHomeRecommendProductListAPI({
     .get({
       url: '/home/recommendProductList',
       params: { pageNum, pageSize },
-    })
-    .then((res = {}) => {
-      return res.data;
     });
 }

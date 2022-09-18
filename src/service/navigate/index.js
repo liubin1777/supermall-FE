@@ -1,4 +1,5 @@
 import history from 'history/browser';
+import Util from '@util/index';
 
 class Navigate {
   constructor() {
@@ -9,8 +10,8 @@ class Navigate {
     return history;
   }
 
-  go(url) {
-    history.push(url);
+  go(url, query) {
+    history.push(Util.query.stringifyUrl(url, query));
   }
 
   back() {

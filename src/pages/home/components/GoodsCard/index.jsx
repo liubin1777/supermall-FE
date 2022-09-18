@@ -16,7 +16,7 @@ export default React.memo(({ data }) => {
   // 点击回调
   function onClick() {
     console.log('[SuperMall] GoodsCard|onClick');
-    Service.navigate.go('/goods-detail');
+    Service.navigate.go('/goods-detail', {id: data.id});
   }
 
   // console.log('[SuperMall] GoodsCard|render');

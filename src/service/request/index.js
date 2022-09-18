@@ -46,7 +46,7 @@ function fetch(data = {}) {
     .request(data)
     .then((res) => {
       console.log('[SuperMall] request success ', url, res);
-      return res;
+      return res.data;
     })
     .catch((err) => {
       console.error('[SuperMall] request failed ', url, err);

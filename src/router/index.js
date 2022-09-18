@@ -7,7 +7,7 @@ import {
 import Service from '@root/service';
 import Util from '@util/index';
 import Loading from '@component/Loading';
-import ErrorBoundary from '@page/Error';
+import ErrorBoundary from '@page/error';
 import pagePaths from './page-path';
 
 const router = (

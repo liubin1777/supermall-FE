@@ -1,10 +1,3 @@
-const data = [];
-for (let i = 0; i < 3; i++) {
-  data.push({
-    img: 'http://127.0.0.1:9090/assets/goods-detail/banner.png',
-    url: '/',
-  });
-}
 export default {
-  data,
+  data: 'http://127.0.0.1:9090/assets/goods-detail/banner.png,http://127.0.0.1:9090/assets/goods-detail/banner.png,http://127.0.0.1:9090/assets/goods-detail/banner.png',
 };

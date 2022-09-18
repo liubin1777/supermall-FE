@@ -1,8 +1,8 @@
 export default (rawData) => {
 
-  if (!rawData || rawData.length === 0) {
+  if (!rawData) {
     return [];
   }
 
-  return rawData;
+  return rawData.split(',');
 }

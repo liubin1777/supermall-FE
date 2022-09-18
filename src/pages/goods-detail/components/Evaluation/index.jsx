@@ -25,8 +25,8 @@ export default React.memo(({ data }) => {
       </div>
       {/* row-评价 */}
       {
-        data.list.map((itemData) => {
-          return <Item data={itemData}/>
+        data.list.map((itemData, idx) => {
+          return <Item key={idx} data={itemData}/>
         })
       }
     </div>

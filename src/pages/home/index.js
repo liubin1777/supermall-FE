@@ -28,20 +28,23 @@ export default function IndexPage() {
   } = useRequest(fetchHomeContentData, { manual: true });
 
   useEffect(() => {
-    console.log('[SuperMall] Page|Index|onLoad|fetchData');
+    console.log('[SuperMall] IndexPage|onLoad|fetchData');
     fetchData();
   }, []);
 
   let content = null;
-  if (loading || !data) { // 展示loading
-    content = <Loading />;
-  } else if (error) { // 展示错误
+  if (error) {
+    // 展示错误
     content = (
       <div className={styles.error}>
         <Error />
       </div>
     );
-  } else { // 展示数据
+  } else if (loading || !data) {
+    // 展示loading
+    content = <Loading />;
+  } else {
+    // 展示数据
     content = (
       <>
         <div className={styles['middle-content']}>

@@ -3,3 +3,13 @@
   flex-direction: column;
   background: linear-gradient(234deg, #FEFEFC 0%, #F0F0F0 100%);
 }
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin-top: -30%;
+  border-radius: 22rem 22rem 0 0;
+  background-color: white;
+}
