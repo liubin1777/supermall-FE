@@ -27,7 +27,7 @@
 
 .middle-content {
   padding-top: 22rem;
-  /* height: 100%; */
+  padding-bottom: 120rem;
 }
 
 .middle-content::after {

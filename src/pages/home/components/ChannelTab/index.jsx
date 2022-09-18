@@ -26,7 +26,7 @@ export default React.memo(({ data, onClickCallBack }) => {
     onClickCallBack && onClickCallBack(data.list[idx]);
   }
 
-  console.log('[SuperMall] ChannelTab|render');
+  // console.log('[SuperMall] ChannelTab|render');
   return (
     <div className={styles.root}>
       {data.list.map((item, idx) => {

@@ -21,26 +21,26 @@ import {
 
 export default function Index() {
   const {
-    data: apiData,
-    error: apiError,
-    loading: apiLoading,
+    data,
+    error,
+    loading,
     run: fetchData,
   } = useRequest(fetchHomeContentData, { manual: true });
 
   useEffect(() => {
     console.log(
       '[SuperMall] Page|Index|onLoad|fetchData = ',
-      apiData,
-      apiError,
-      apiLoading
+      data,
+      error,
+      loading
     );
     fetchData();
   }, []);
 
   let content = null;
-  if (apiLoading || !apiData) {
+  if (loading || !data) {
     content = <Loading />;
-  } else if (apiError) {
+  } else if (error) {
     content = (
       <div className={styles.error}>
         <Error />
@@ -50,7 +50,7 @@ export default function Index() {
     content = (
       <>
         <div className={styles['middle-content']}>
-          <Banner data={apiData.bannerData} />
+          <Banner data={data.bannerData} />
           <KingPie />
           <ActivityCardList />
           <ChannelTab />

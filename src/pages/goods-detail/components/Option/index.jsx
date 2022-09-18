@@ -14,7 +14,7 @@ export default React.memo(({ data }) => {
     data = mockData.data;
   }
 
-  console.log('[SuperMall] GoodsOption|render');
+  // console.log('[SuperMall] GoodsOption|render');
   return (
     <div className={styles.root}>
       {

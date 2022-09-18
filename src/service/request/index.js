@@ -41,14 +41,15 @@ export function post(data) {
 }
 
 function fetch(data = {}) {
+  const { url } = data;
   return instance
     .request(data)
     .then((res) => {
-      console.log('[SuperMall] request success ', res);
+      console.log('[SuperMall] request success ', url, res);
       return res;
     })
     .catch((err) => {
-      console.error('[SuperMall] request failed ', err);
+      console.error('[SuperMall] request failed ', url, err);
       return Promise.reject(err);
     });
 };

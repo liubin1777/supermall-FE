@@ -14,7 +14,7 @@ export default React.memo(({ data }) => {
     return null;
   }
 
-  console.log('[SuperMall] SpecificationRow|render');
+  // console.log('[SuperMall] SpecificationRow|render');
   return (
     <div className={styles.root}>
       <div className={styles.title}>{data.title}</div>

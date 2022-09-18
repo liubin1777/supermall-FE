@@ -12,7 +12,7 @@ export default {
 };
 
 const Template = (args) => <Component {...args} />;
-const formatedMockData = formatData(mockData.data);
+const formatedMockData = formatData(mockData);
 
 export const Primary = Template.bind({});
 Primary.args = {

@@ -21,7 +21,7 @@ export default React.memo(({ data }) => {
     console.log('[SuperMall] GoodsInfo|onClick');
   }
 
-  console.log('[SuperMall] GoodsInfo|render');
+  // console.log('[SuperMall] GoodsInfo|render');
   return (
     <div className={styles.root}>
       {/* row-价格 */}

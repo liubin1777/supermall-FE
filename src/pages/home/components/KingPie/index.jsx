@@ -33,7 +33,7 @@ export default React.memo(({ data }) => {
     console.log('[SuperMall] KingPie|onClick');
   }
 
-  console.log('[SuperMall] KingPie|render');
+  // console.log('[SuperMall] KingPie|render');
   return (
     // 容器
     <Swiper

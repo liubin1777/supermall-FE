@@ -19,7 +19,7 @@ export default React.memo(({ data }) => {
     console.log('[SuperMall] ActivityCard|onClick');
   }
 
-  console.log('[SuperMall] ActivityCard|render');
+  // console.log('[SuperMall] ActivityCard|render');
   return (
     <div className={styles.root}>
       {/* 标题 */}

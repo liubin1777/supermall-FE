@@ -17,7 +17,7 @@ export default React.memo(({ price = '0', size: fontSize = 42, color }) => {
     smallFontSize = 10;
   }
 
-  console.log('[SuperMall] PriceLabel|render = ', priceList);
+  // console.log('[SuperMall] PriceLabel|render = ', priceList);
   return (
     <div className={styles.root}>
       <div style={{ color, fontSize: `${smallFontSize}rem` }}>￥</div>

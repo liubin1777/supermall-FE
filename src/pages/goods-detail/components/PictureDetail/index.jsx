@@ -13,7 +13,7 @@ export default React.memo(({ data }) => {
     data = mockData.data;
   }
 
-  console.log('[SuperMall] GoodsPictureDetail|render');
+  // console.log('[SuperMall] GoodsPictureDetail|render');
   return (
     <div className={styles.root}>
       {/* row-店铺信息 */}

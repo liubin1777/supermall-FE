@@ -22,7 +22,7 @@ export default React.memo(({ data }) => {
     console.log('[SuperMall] Banner|onClick');
   }
 
-  console.log('[SuperMall] Banner|render');
+  // console.log('[SuperMall] Banner|render');
   return (
     // 容器
     <Swiper

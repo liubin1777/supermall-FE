@@ -14,7 +14,7 @@ export default React.memo(({ desc = '', size, color }) => {
     return null;
   }
 
-  console.log('[SuperMall] ActivityTag|render');
+  // console.log('[SuperMall] ActivityTag|render');
   return (
     <div className={styles.root} style={{ fontSize: `${size}rem`, color }}>
       {desc}

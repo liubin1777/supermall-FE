@@ -20,7 +20,7 @@ export default React.memo(({ data, selectedIdx: _selectedIdx = 0 }) => {
   const [selectedIdx, setSelectedIndex] =
     Service.hook.useDerivedStateFromProps(_selectedIdx);
 
-  console.log('[SuperMall] TabBar|render');
+  // console.log('[SuperMall] TabBar|render');
   return (
     <div className={styles.root}>
       {data.map((item, idx) => {

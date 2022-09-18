@@ -1,7 +1,7 @@
 import React from 'react';
 import Component from './index';
 import mockData from './mock';
-import formatData from './format';
+import formatData from '../GoodsCard/format';
 
 export default {
   title: 'SuperMall/HomePage/GoodsCardList',
@@ -12,9 +12,9 @@ export default {
 };
 
 const Template = (args) => <Component {...args} />;
-const formatedMockData = formatData(mockData.data);
+const formatedMockData = formatData(mockData);
 
 export const Primary = Template.bind({});
 Primary.args = {
-  data: formatedMockData,
+  mockData: formatedMockData,
 };

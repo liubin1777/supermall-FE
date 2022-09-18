@@ -30,7 +30,7 @@ export default React.memo(({ data }) => {
     });
   }
 
-  console.log('[SuperMall] Tabs|render');
+  // console.log('[SuperMall] Tabs|render');
   return (
     <div className={styles.root}>
       <div className={styles.scroll}>

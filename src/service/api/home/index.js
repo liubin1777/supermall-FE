@@ -23,13 +23,14 @@ export function fetchHomeContentAPI() {
  *
  * @returns {Promise}
  */
-export function fetchHomeRecommendProductListAPI(
-  params = { pageNum: 1, pageSize: 10 }
-) {
+export function fetchHomeRecommendProductListAPI({
+  pageNum = 1,
+  pageSize = 10,
+}) {
   return Service.request
     .get({
       url: '/home/recommendProductList',
-      params,
+      params: { pageNum, pageSize },
     })
     .then((res = {}) => {
       return res.data;

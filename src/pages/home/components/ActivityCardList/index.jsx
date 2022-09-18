@@ -13,7 +13,7 @@ export default React.memo(({ data }) => {
   //   return null;
   // }
 
-  console.log('[SuperMall] ActivityCardList|render');
+  // console.log('[SuperMall] ActivityCardList|render');
   return (
     <div className={styles.root}>
       {new Array(4).fill(1).map((item, idx) => {

@@ -20,7 +20,7 @@ export default React.memo(({ data }) => {
     console.log('[SuperMall] SearchBar|onClickSearch', name, idx);
   }
 
-  console.log('[SuperMall] SearchBar|render');
+  // console.log('[SuperMall] SearchBar|render');
   return (
     <div className={styles.root}>
       <img className={styles.search} src={IMAGE_SEARCH} />

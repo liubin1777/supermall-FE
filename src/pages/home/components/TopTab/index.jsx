@@ -26,7 +26,7 @@ export default React.memo(({ data, onClickCallBack }) => {
     onClickCallBack && onClickCallBack(data.list[idx]);
   }
 
-  console.log('[SuperMall] TopTab|render');
+  // console.log('[SuperMall] TopTab|render');
   return (
     <div className={styles.root}>
       {data.list.map((item, idx) => {

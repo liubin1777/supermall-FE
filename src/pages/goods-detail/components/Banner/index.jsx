@@ -33,7 +33,7 @@ export default React.memo(({ data }) => {
     console.log('[SuperMall] GoodsBanner|onClick');
   }
 
-  console.log('[SuperMall] GoodsBanner|render');
+  // console.log('[SuperMall] GoodsBanner|render');
   return (
     // 容器
     <Swiper

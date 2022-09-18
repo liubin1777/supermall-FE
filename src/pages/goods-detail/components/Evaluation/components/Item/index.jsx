@@ -13,7 +13,7 @@ export default React.memo(({ data }) => {
     data = mockData.data;
   }
 
-  console.log('[SuperMall] GoodsEvaluationItem|render');
+  // console.log('[SuperMall] GoodsEvaluationItem|render');
   return (
     <div className={styles.root}>
       <div className={styles.avatar}>

@@ -11,7 +11,7 @@ import { ReactComponent as ArrowRight } from '../../assets/icon/arrow-right.svg'
  * @return {Object} ReactElement
  */
 export default React.memo(({ desc = '', size = 22, color = '#7F7F7F' }) => {
-  console.log('[SuperMall] IndicateArrow|render');
+  // console.log('[SuperMall] IndicateArrow|render');
   return (
     <div className={styles.root}>
       <div className={styles.text} style={{fontSize: `${size}rem`, color}}>{desc}</div>
