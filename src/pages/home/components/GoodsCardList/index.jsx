@@ -66,12 +66,3 @@ export default React.memo(({ mockData }) => {
     </div>
   );
 });
-
-function getItems(nextGroupKey, count) {
-  const nextItems = [];
-  const nextKey = nextGroupKey * count;
-  for (let i = 0; i < count; ++i) {
-    nextItems.push({ groupKey: nextGroupKey, key: nextKey + i });
-  }
-  return nextItems;
-}

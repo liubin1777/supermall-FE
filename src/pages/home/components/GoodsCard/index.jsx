@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styles from './index.module.css';
+import Service from '@root/service';
 
 /**
  * 商品组件
@@ -15,6 +16,7 @@ export default React.memo(({ data }) => {
   // 点击回调
   function onClick() {
     console.log('[SuperMall] GoodsCard|onClick');
+    Service.navigate.go('/goods-detail');
   }
 
   // console.log('[SuperMall] GoodsCard|render');

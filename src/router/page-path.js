@@ -15,7 +15,7 @@ export default [
     page: import('../pages/cart'),
   },
   {
-    path: '/cart',
+    path: '/goods-detail',
     page: import('../pages/goods-detail'),
   },
   {
