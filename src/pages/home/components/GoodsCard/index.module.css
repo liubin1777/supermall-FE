@@ -24,6 +24,7 @@
 /* https://css-tricks.com/almanac/properties/l/line-clamp/ */
 .title-container {
   font-size: 22rem;
+  line-height: 30rem;
   color: #201c1c;
   font-weight: bold;
   overflow: hidden;
@@ -59,6 +60,7 @@
 }
 
 .price-container {
+  margin-top: 12rem;
 }
 
 .price {
