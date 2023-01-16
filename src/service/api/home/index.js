@@ -8,11 +8,10 @@ import Service from '@service';
  *
  * @returns {Promise}
  */
-export function fetchHomeContentAPI() {
-  return Service.request
-    .get({
-      url: '/home/content',
-    });
+export function getHomeContentAPI() {
+  return Service.request.get({
+    url: '/home/content',
+  });
 }
 
 /**
@@ -20,13 +19,9 @@ export function fetchHomeContentAPI() {
  *
  * @returns {Promise}
  */
-export function fetchHomeRecommendProductListAPI({
-  pageNum = 1,
-  pageSize = 10,
-}) {
-  return Service.request
-    .get({
-      url: '/home/recommendProductList',
-      params: { pageNum, pageSize },
-    });
+export function getHomeRecommendProductListAPI({ pageNum = 1, pageSize = 10 }) {
+  return Service.request.get({
+    url: '/home/recommendProductList',
+    params: { pageNum, pageSize },
+  });
 }

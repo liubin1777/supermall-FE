@@ -40,14 +40,23 @@ export default React.memo(({ data }) => {
           });
 
           return (
-            <div className={itemStyle} key={idx} data-idx={idx} data-name={item.name} onClick={onClick}>
+            <div
+              className={itemStyle}
+              key={idx}
+              data-idx={idx}
+              data-name={item.name}
+              onClick={onClick}
+            >
               {item.name}
             </div>
           );
         })}
       </div>
       <div className={styles.more}>
-        <img src={data.img} alt="" />
+        <img
+          src={data.img || 'http://127.0.0.1:9090/assets/home/more.png'}
+          alt=""
+        />
       </div>
     </div>
   );

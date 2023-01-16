@@ -39,7 +39,8 @@ export default React.memo(({ data }) => {
     <Swiper
       pagination={paginationConfig}
       modules={[Pagination]}
-      className={styles.swiper}>
+      className={styles.swiper}
+    >
       {data.map((pageData, pageIdx) => (
         // 每页
         <SwiperSlide className={styles['swiper-slide']} key={pageIdx}>
@@ -48,9 +49,10 @@ export default React.memo(({ data }) => {
             <div
               className={styles['swiper-item']}
               key={itemIdx}
-              onClick={onClick}>
+              onClick={onClick}
+            >
               {/* 图片 */}
-              <img className={styles.img} src={itemData.img} />
+              <img className={styles.img} src={itemData.pic} />
               {/* 标题 */}
               <div className={styles.title}>{itemData.name}</div>
             </div>

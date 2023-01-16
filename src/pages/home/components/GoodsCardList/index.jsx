@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import styles from './index.module.css';
 import GoodsCard from '../GoodsCard';
 import { MasonryInfiniteGrid } from '@egjs/react-infinitegrid';
-import { fetchHomeRecommendProductListData } from '../../service/fetchData';
-import { useRequest } from 'ahooks';
+import { useGetHomeRecommendProductListAPI } from '../../service/api';
 
 const PAGE_SIZE = 10;
 
@@ -19,29 +18,29 @@ export default React.memo(({ mockData }) => {
   const [pageNum, setPageNum] = React.useState(1); // 分页
 
   const {
-    error,
-    loading,
-    run: fetchData,
-  } = useRequest(fetchHomeRecommendProductListData, { manual: true, onSuccess: (data, params) => {
+    error: reqError,
+    loading: reqLoading,
+    run: reqRun,
+  } = useGetHomeRecommendProductListAPI((data, params) => {
     loadDone.current = data.length < PAGE_SIZE ? true : false;
     setList([...list, ...data]);
-  }});
+  });
 
   // 请求数据
   useEffect(() => {
-    if (!loading) {
-      console.log('[SuperMall] GoodsCardList|fetchData|pageNum = ', pageNum);
-      fetchData({ pageNum });
+    if (!reqLoading) {
+      console.log('[SuperMall] GoodsCardList|reqRun|pageNum = ', pageNum);
+      reqRun({ pageNum });
     }
   }, [pageNum]);
 
   // 加载更多
   const onRequestAppend = (e) => {
-    if (loadDone.current || loading) {
+    if (loadDone.current || reqLoading) {
       return;
     }
     console.log('[SuperMall] GoodsCardList|onRequestAppend');
-    setPageNum(parseInt(list.length/PAGE_SIZE)+1);
+    setPageNum(parseInt(list.length / PAGE_SIZE) + 1);
   };
 
   // 渲染完成
@@ -57,7 +56,8 @@ export default React.memo(({ mockData }) => {
         gap={20}
         align={'center'}
         onRequestAppend={onRequestAppend}
-        onRenderComplete={onRenderComplete}>
+        onRenderComplete={onRenderComplete}
+      >
         {list &&
           list.map((item, idx) => (
             <GoodsCard key={idx} data={item || mockData} />

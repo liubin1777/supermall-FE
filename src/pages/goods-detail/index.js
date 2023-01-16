@@ -26,6 +26,7 @@ export default function GoodsDetailPage() {
     run: fetchData,
   } = useRequest(fetchGoodsDetailData, { manual: true });
   const [searchParams] = useSearchParams();
+  // const queryParams = Object.fromEntries([...searchParams]);
 
   useEffect(() => {
     console.log('[SuperMall] GoodsDetailPage|onLoad|fetchData');

@@ -3,8 +3,7 @@
  */
 import React, { useEffect } from 'react';
 import styles from './index.module.css';
-import { useRequest } from 'ahooks';
-import { fetchHomeContentData } from './service/fetchData';
+import { useGetHomeContentAPI } from './service/api';
 import {
   TopTab,
   SearchBar,
@@ -21,26 +20,26 @@ import {
 
 export default function IndexPage() {
   const {
-    data,
-    error,
-    loading,
-    run: fetchData,
-  } = useRequest(fetchHomeContentData, { manual: true });
+    data: reqData,
+    error: reqError,
+    loading: reqLoading,
+    run: reqRun,
+  } = useGetHomeContentAPI();
 
   useEffect(() => {
-    console.log('[SuperMall] IndexPage|onLoad|fetchData');
-    fetchData();
+    console.log('[SuperMall] IndexPage|onLoad|reqRun');
+    reqRun();
   }, []);
 
   let content = null;
-  if (error) {
+  if (reqError) {
     // 展示错误
     content = (
       <div className={styles.error}>
         <Error />
       </div>
     );
-  } else if (loading || !data) {
+  } else if (reqLoading || !reqData) {
     // 展示loading
     content = <Loading />;
   } else {
@@ -48,8 +47,8 @@ export default function IndexPage() {
     content = (
       <>
         <div className={styles['middle-content']}>
-          <Banner data={data.bannerData} />
-          <KingPie />
+          <Banner data={reqData.bannerList} />
+          <KingPie data={reqData.kingpieList} />
           <ActivityCardList />
           <ChannelTab />
           <GoodsCardList />
@@ -64,7 +63,7 @@ export default function IndexPage() {
       <div className={styles['top-content']}>
         <TopTab />
         <SearchBar />
-        <Tabs />
+        <Tabs data={reqData && reqData.cateData} />
       </div>
       {content}
       <TabBar />
