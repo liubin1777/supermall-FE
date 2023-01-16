@@ -1,7 +1,7 @@
 import styles from './index.module.css';
 import { useState, useRef } from 'react';
 import classNames from 'classnames';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Routes, Route } from 'react-router-dom';
 import TabBar from '@component/TabBar';
 import { TabBarConfig } from '../../router/page';
 
@@ -12,9 +12,9 @@ export default function TabBarPage() {
   // let CurrentPage = TabBarConfig[selectedIdx].page;
 
   return (
-    <div className={styles.root}>
+    <div className={styles.page}>
       {TabBarConfig.map((tabbarItem, idx) => {
-        const itemClsName = classNames(styles['tabbar-item'], {
+        const itemClsName = classNames(styles['item'], {
           [styles.show]: idx == selectedIdx,
         });
 

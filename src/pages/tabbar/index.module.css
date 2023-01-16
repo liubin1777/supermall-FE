@@ -1,8 +1,8 @@
-.root {
+.page {
   position: relative;
 }
 
-.tabbar-item {
+.item {
   top: 0;
   bottom: 0;
   left: 0;
