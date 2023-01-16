@@ -1,4 +1,3 @@
-export { default as TabBar } from '@component/TabBar';
 export { default as TopTab } from './TopTab';
 export { default as SearchBar } from './SearchBar';
 export { default as Tabs } from './Tabs';

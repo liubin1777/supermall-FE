@@ -13,7 +13,6 @@ import {
   ActivityCardList,
   ChannelTab,
   GoodsCardList,
-  TabBar,
   Loading,
   Error,
 } from './components';
@@ -66,7 +65,7 @@ export default function IndexPage() {
         <Tabs data={reqData && reqData.cateData} />
       </div>
       {content}
-      <TabBar />
+      {/* <TabBar /> */}
     </div>
   );
 }
