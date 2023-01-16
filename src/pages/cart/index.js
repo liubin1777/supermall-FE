@@ -1,9 +1,5 @@
 import './index.module.css';
 
-export default function OrderList() {
-  return (
-    <div>
-      订单列表页面
-    </div>
-  );
+export default function CartPage() {
+  return <div>购物车页面</div>;
 }

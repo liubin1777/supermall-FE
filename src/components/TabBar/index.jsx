@@ -3,6 +3,7 @@ import styles from './index.module.css';
 import classNames from 'classnames';
 import Service from '@service';
 import mockData from './mock';
+import service from '@service';
 
 /**
  * TabBar组件
@@ -37,7 +38,11 @@ export default React.memo(({ data, selectedIdx: _selectedIdx = 0 }) => {
           <div
             className={styles.item}
             key={idx}
-            onClick={() => setSelectedIndex(idx)}>
+            onClick={() => {
+              service.navigate.go(item.url);
+              setSelectedIndex(idx);
+            }}
+          >
             {/* 图片 */}
             <img
               className={styles.icon}

@@ -1,7 +1,7 @@
 import styles from './index.module.css';
 import { useState, useRef } from 'react';
 import classNames from 'classnames';
-import * as PageService from './service'
+import * as PageService from './service';
 
 let timer; // 验证码计时器
 const COUNT_DOWN = 60; // 倒计时60秒
@@ -11,7 +11,7 @@ const CODE_LOADING = '秒后重试';
 /**
  * 登录页面
  */
-export default function Login() {
+export default function LoginPage() {
   const [phone, setPhone] = useState('18618138919'); // 手机号
   const [code, setCode] = useState(''); // 验证码
   const [getCodeDes, setGetCodeDes] = useState(CODE_DESC); // 获取验证码描述
@@ -27,11 +27,13 @@ export default function Login() {
       alert('请输入手机号和验证码');
     }
 
-    PageService.loginByPhoneAndCode(phone, code).then((res) => {
-      console.log('[SuperMall] 登录页面|onClickLogin 成功 = ', res);
-    }).catch((err) => {
-      console.error('[SuperMall] 登录页面|onClickLogin 失败 = ', err);
-    })
+    PageService.loginByPhoneAndCode(phone, code)
+      .then((res) => {
+        console.log('[SuperMall] 登录页面|onClickLogin 成功 = ', res);
+      })
+      .catch((err) => {
+        console.error('[SuperMall] 登录页面|onClickLogin 失败 = ', err);
+      });
   }
 
   /**
@@ -50,17 +52,22 @@ export default function Login() {
     }
 
     // 获取验证码
-    PageService.getAuthCode(phone).then((data) => {
-      console.log('[SuperMall] 登录页面|onClickGetAuthCode|验证码 = ', data);
-      setCode(data);
-    }).catch((err) => {
-      console.error('[SuperMall] 登录页面|onClickGetAuthCode|验证码|失败 = ', err);
-      alert('验证码获取失败');
-    })
+    PageService.getAuthCode(phone)
+      .then((data) => {
+        console.log('[SuperMall] 登录页面|onClickGetAuthCode|验证码 = ', data);
+        setCode(data);
+      })
+      .catch((err) => {
+        console.error(
+          '[SuperMall] 登录页面|onClickGetAuthCode|验证码|失败 = ',
+          err
+        );
+        alert('验证码获取失败');
+      });
 
     setGetCodeDes(`(${countDown.current}${CODE_LOADING})`);
 
-    timer = setInterval(()=>{
+    timer = setInterval(() => {
       countDown.current--;
       setGetCodeDes(`(${countDown.current}${CODE_LOADING})`);
 
@@ -94,7 +101,12 @@ export default function Login() {
             value={code}
             onChange={(e) => setCode(e.target.value)}
           />
-          <div className={classNames(styles['code-btn'], {[styles['code-loading']]: getCodeDes !== CODE_DESC})} onClick={onClickGetAuthCode}>
+          <div
+            className={classNames(styles['code-btn'], {
+              [styles['code-loading']]: getCodeDes !== CODE_DESC,
+            })}
+            onClick={onClickGetAuthCode}
+          >
             {getCodeDes}
           </div>
         </div>
