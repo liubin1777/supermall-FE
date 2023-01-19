@@ -37,7 +37,7 @@ const router = (
     {/* Toast */}
     <ToastContainer
       position="top-center"
-      hideProgressBar
+      hideProgressBar={false}
       theme="light"
       limit="1"
       autoClose={2000}
@@ -47,6 +47,6 @@ const router = (
   </ErrorBoundary>
 );
 
-toast('Wow so easy !');
+// toast('Wow so easy !');
 
 export default router;

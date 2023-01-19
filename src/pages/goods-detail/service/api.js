@@ -27,14 +27,13 @@ const getGoodsDetailData = async (goodsId) => {
 };
 
 // 商品加入到购物车
-export const useCartAdd = () => {
-  return useRequest(cartAdd, { manual: true });
+export const useCartAdd = (onSuccess, onError) => {
+  return useRequest(cartAdd, { manual: true, onSuccess, onError });
 };
 
 const cartAdd = async (data) => {
   try {
-    const {} = await cartAddAPI(data);
-    const result = {};
+    const result = await cartAddAPI(data);
     return result;
   } catch (error) {
     return Promise.reject(error);

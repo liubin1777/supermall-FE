@@ -5,6 +5,7 @@ import React, { useEffect, useState, useCallback, useRef } from 'react';
 import styles from './index.module.css';
 import { useGetGoodsDetailData, useCartAdd } from './service/api';
 import { useSearchParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import {
   Banner,
   Cart,
@@ -26,12 +27,36 @@ export default function GoodsDetailPage() {
     run: reqRun,
   } = useGetGoodsDetailData();
 
+  let cartAddToastId = useRef(null);
   const {
     data: reqCartAddData,
-    error: reqCartAddError,
     loading: reqCartAddLoading,
     run: reqCartAddRun,
-  } = useCartAdd();
+  } = useCartAdd(
+    (data, params) => {
+      console.log('[SuperMall] GoodsDetailPage|添加购物车成功', data);
+    },
+    (data, params) => {
+      console.error('[SuperMall] GoodsDetailPage|添加购物车失败', data);
+    }
+  );
+
+  console.log('cartAddToastId = ', cartAddToastId.current);
+  if (reqCartAddLoading && !cartAddToastId.current) {
+    cartAddToastId.current = toast.loading('添加中...');
+  } else if (!reqCartAddLoading && cartAddToastId.current) {
+    toast.update(cartAddToastId.current, {
+      render: reqCartAddData ? '添加成功' : '添加失败',
+      type: 'success',
+      isLoading: false,
+      hideProgressBar: true,
+      // autoClose: 2000,
+    });
+    setTimeout(() => {
+      toast.dismiss();
+      cartAddToastId.current = null;
+    }, 1000);
+  }
 
   const [showSkuSheet, setShowSkuSheet] = useState(false);
   const [searchParams] = useSearchParams();
@@ -39,7 +64,7 @@ export default function GoodsDetailPage() {
 
   const onClickAddCartCB = useCallback(onClickAddCart, []);
   const onClickBuyCB = useCallback(onClickBuy, []);
-  const onClickSkuCB = useCallback(onClickSku, []);
+  const onClickSkuCB = useCallback(onClickSku, [reqData]);
 
   const buyAction = useRef(false);
 
@@ -88,6 +113,8 @@ export default function GoodsDetailPage() {
       reqCartAddRun(reqParams);
     }
   }
+
+  console.log('[SuperMall] GoodsDetailPage|render', reqData);
 
   let content = null;
   if (error) {
