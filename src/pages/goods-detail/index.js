@@ -20,6 +20,7 @@ import {
 } from './components';
 
 export default function GoodsDetailPage() {
+  // 获取商品详情请求
   const {
     data: reqData,
     error,
@@ -27,7 +28,7 @@ export default function GoodsDetailPage() {
     run: reqRun,
   } = useGetGoodsDetailData();
 
-  let cartAddToastId = useRef(null);
+  // 添加购物车请求
   const {
     data: reqCartAddData,
     loading: reqCartAddLoading,
@@ -41,7 +42,23 @@ export default function GoodsDetailPage() {
     }
   );
 
-  console.log('cartAddToastId = ', cartAddToastId.current);
+  const [showSkuSheet, setShowSkuSheet] = useState(false);
+  const [searchParams] = useSearchParams();
+  // const queryParams = Object.fromEntries([...searchParams]);
+
+  const onClickAddCartCB = useCallback(onClickAddCart, []);
+  const onClickBuyCB = useCallback(onClickBuy, []);
+  const onClickSkuCB = useCallback(onClickSku, [reqData]);
+
+  const cartAddToastId = useRef(null);
+  const buyAction = useRef(false);
+
+  useEffect(() => {
+    console.log('[SuperMall] GoodsDetailPage|onLoad|reqRun');
+    reqRun(searchParams.get('id'));
+  }, []);
+
+  // 添加购物车 loading 弹窗
   if (reqCartAddLoading && !cartAddToastId.current) {
     cartAddToastId.current = toast.loading('添加中...');
   } else if (!reqCartAddLoading && cartAddToastId.current) {
@@ -57,21 +74,6 @@ export default function GoodsDetailPage() {
       cartAddToastId.current = null;
     }, 1000);
   }
-
-  const [showSkuSheet, setShowSkuSheet] = useState(false);
-  const [searchParams] = useSearchParams();
-  // const queryParams = Object.fromEntries([...searchParams]);
-
-  const onClickAddCartCB = useCallback(onClickAddCart, []);
-  const onClickBuyCB = useCallback(onClickBuy, []);
-  const onClickSkuCB = useCallback(onClickSku, [reqData]);
-
-  const buyAction = useRef(false);
-
-  useEffect(() => {
-    console.log('[SuperMall] GoodsDetailPage|onLoad|reqRun');
-    reqRun(searchParams.get('id'));
-  }, []);
 
   // 点击添加到购物车
   function onClickAddCart(e) {
