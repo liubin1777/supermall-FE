@@ -8,12 +8,12 @@ import mockData from './mock';
  * @param {array} data: 数据列表
  * @return {Object} ReactElement
  */
-export default React.memo(({ data }) => {
+export default React.memo(({ data, onClickAddCart, onClickBuy }) => {
   if (!data) {
     data = mockData.data;
   }
 
-  // console.log('[SuperMall] GoodsCart|render');
+  console.log('[SuperMall] GoodsCart|render');
   return (
     <div className={styles.root}>
       <div className={styles.operation}>
@@ -47,9 +47,13 @@ export default React.memo(({ data }) => {
       </div>
       <div className={styles.btn}>
         {/* 加入购物车 */}
-        <div className={styles.add}>加入购物车</div>
+        <div className={styles.add} onClick={onClickAddCart}>
+          加入购物车
+        </div>
         {/* 立即购买 */}
-        <div className={styles.buy}>立即购买</div>
+        <div className={styles.buy} onClick={onClickBuy}>
+          立即购买
+        </div>
       </div>
     </div>
   );

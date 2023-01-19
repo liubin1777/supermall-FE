@@ -9,9 +9,10 @@ import format from './format';
  * GoodsSkuSheet sku选择组件
  *
  * @param {array} data: 数据列表
+ * @param {function} onClick: 选择回调
  * @return {Object} ReactElement
  */
-export default React.memo(({ data }) => {
+export default React.memo(({ data, onClick }) => {
   if (!data || data.length === 0) {
     data = format(mockData.data);
   }
@@ -21,6 +22,11 @@ export default React.memo(({ data }) => {
   );
 
   const [skuPic, setSkuPic] = React.useState(getPic(selectedAttri));
+
+  // 获取选择的 sku 图片
+  function getPic(selectedAttri) {
+    return data.skuList[selectedAttri.join('|')].pic;
+  }
 
   // 点击sku属性
   function onClickSkuAttri(idx, value) {
@@ -35,11 +41,13 @@ export default React.memo(({ data }) => {
     // console.log('[SuperMall] GoodsSkuSheet|onClick', value, pic);
   }
 
-  function getPic(selectedAttri) {
-    return data.skuList[selectedAttri.join('|')].pic;
+  // 点击确定按钮
+  function onClickConfirm() {
+    const selected = data.skuList[selectedAttri.join('|')];
+    onClick && onClick(selected);
   }
 
-  console.log('[SuperMall] GoodsSkuSheet|render', selectedAttri, skuPic, data);
+  console.log('[SuperMall] GoodsSkuSheet|render');
   return (
     <div className={styles.root}>
       <div className={styles.content}>
@@ -92,6 +100,15 @@ export default React.memo(({ data }) => {
               </div>
             );
           })}
+
+          {/* <div style={{ background: 'blue', height: '500px' }}></div> */}
+        </div>
+
+        {/* 确定按钮 */}
+        <div className={styles['confirm']}>
+          <div className={styles['confirm-btn']} onClick={onClickConfirm}>
+            确定
+          </div>
         </div>
       </div>
     </div>

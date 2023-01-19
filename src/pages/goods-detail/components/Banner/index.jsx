@@ -11,9 +11,17 @@ import mockData from './mock';
 const PaginationConfig = {
   type: 'fraction',
   renderFraction: function (currentClass, totalClass) {
-    return '<div class="' + styles['page-number'] + '"><span class="' + currentClass + '"></span>' +
-    ' / ' +
-    '<span class="' + totalClass + '"></span></div>';
+    return (
+      '<div class="' +
+      styles['page-number'] +
+      '"><span class="' +
+      currentClass +
+      '"></span>' +
+      ' / ' +
+      '<span class="' +
+      totalClass +
+      '"></span></div>'
+    );
   },
 };
 
@@ -33,19 +41,21 @@ export default React.memo(({ data }) => {
     console.log('[SuperMall] GoodsBanner|onClick');
   }
 
-  console.log('[SuperMall] GoodsBanner|render', data);
+  console.log('[SuperMall] GoodsBanner|render');
   return (
     // 容器
     <Swiper
       pagination={PaginationConfig}
       modules={[Pagination]}
-      className={styles.swiper}>
+      className={styles.swiper}
+    >
       {data.map((pic, idx) => (
         // 每页
         <SwiperSlide
           className={styles['swiper-slide']}
           key={idx}
-          onClick={onClick}>
+          onClick={onClick}
+        >
           {/* 图片 */}
           <img className={styles.img} src={pic} />
         </SwiperSlide>

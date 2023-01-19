@@ -5,5 +5,6 @@ export { default as Info } from './Info';
 export { default as Option } from './Option';
 export { default as PictureDetail } from './PictureDetail';
 export { default as Recommend } from './Recommend';
+export { default as SkuSheet } from './SkuSheet';
 export { default as Loading } from '@component/Loading';
 export { default as Error } from '@component/Error';
