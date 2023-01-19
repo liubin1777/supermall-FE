@@ -1,5 +1,6 @@
 import Service from '@service';
 import bannerFormat from '../components/Banner/format';
+import skuSheetFormat from '../components/SkuSheet/format';
 import pictureDetailFormat from '../components/PictureDetail/format';
 import { useRequest } from 'ahooks';
 
@@ -11,9 +12,10 @@ export const useGetGoodsDetailData = () => {
 
 const getGoodsDetailData = async (goodsId) => {
   try {
-    const { product } = await getGoodsDetailAPI(goodsId);
+    const { product, skuStockList } = await getGoodsDetailAPI(goodsId);
     const result = {
       product,
+      sku: skuSheetFormat({ product, skuStockList }),
       banner: bannerFormat(product.albumPics, product.pic),
       pictureDetail: pictureDetailFormat(product.detailHtml),
     };

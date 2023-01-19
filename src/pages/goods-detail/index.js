@@ -19,7 +19,12 @@ import {
 } from './components';
 
 export default function GoodsDetailPage() {
-  const { data, error, loading, run: reqRun } = useGetGoodsDetailData();
+  const {
+    data: reqData,
+    error,
+    loading,
+    run: reqRun,
+  } = useGetGoodsDetailData();
   const [showSkuSheet, setShowSkuSheet] = useState(false);
   const [searchParams] = useSearchParams();
   // const queryParams = Object.fromEntries([...searchParams]);
@@ -57,16 +62,16 @@ export default function GoodsDetailPage() {
         <Error />
       </div>
     );
-  } else if (loading || !data) {
+  } else if (loading || !reqData) {
     // 展示loading
     content = <Loading />;
   } else {
     content = (
       <>
         {/* 商品图片 */}
-        <Banner data={data.banner} />
+        <Banner data={reqData.banner} />
         {/* 价格信息 */}
-        <Info data={data.product} />
+        <Info data={reqData.product} />
         {/* 参数列表 */}
         <Option />
         {/* 评价 */}
@@ -74,7 +79,7 @@ export default function GoodsDetailPage() {
         {/* 店铺相似商品推荐 */}
         <Recommend />
         {/* 商品详情 */}
-        <PictureDetail data={data.pictureDetail} />
+        <PictureDetail data={reqData.pictureDetail} />
       </>
     );
   }
@@ -85,7 +90,9 @@ export default function GoodsDetailPage() {
       {/* 底部购物车栏 */}
       <Cart onClickAddCart={onClickAddCartCB} onClickBuy={onClickBuyCB} />
       {/* sku弹窗 */}
-      {showSkuSheet ? <SkuSheet onClick={onClickSkuCB} /> : null}
+      {showSkuSheet ? (
+        <SkuSheet data={reqData.sku} onClick={onClickSkuCB} />
+      ) : null}
     </div>
   );
 }
