@@ -1,6 +1,7 @@
 import styles from './index.module.css';
 import { useState, useRef } from 'react';
 import classNames from 'classnames';
+import Service from '@service';
 import * as PageService from './service';
 
 let timer; // 验证码计时器
@@ -30,6 +31,8 @@ export default function LoginPage() {
     PageService.loginByPhoneAndCode(phone, code)
       .then((res) => {
         console.log('[SuperMall] 登录页面|onClickLogin 成功 = ', res);
+
+        Service.navigate.back();
       })
       .catch((err) => {
         console.error('[SuperMall] 登录页面|onClickLogin 失败 = ', err);

@@ -4,8 +4,9 @@ import skuSheetFormat from '../components/SkuSheet/format';
 import pictureDetailFormat from '../components/PictureDetail/format';
 import { useRequest } from 'ahooks';
 
-const { getGoodsDetailAPI } = Service.api;
+const { getGoodsDetailAPI, cartAddAPI } = Service.api;
 
+// 获取商品详情
 export const useGetGoodsDetailData = () => {
   return useRequest(getGoodsDetailData, { manual: true });
 };
@@ -19,6 +20,21 @@ const getGoodsDetailData = async (goodsId) => {
       banner: bannerFormat(product.albumPics, product.pic),
       pictureDetail: pictureDetailFormat(product.detailHtml),
     };
+    return result;
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
+
+// 商品加入到购物车
+export const useCartAdd = () => {
+  return useRequest(cartAdd, { manual: true });
+};
+
+const cartAdd = async (data) => {
+  try {
+    const {} = await cartAddAPI(data);
+    const result = {};
     return result;
   } catch (error) {
     return Promise.reject(error);

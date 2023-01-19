@@ -14,6 +14,7 @@ function requestInterceptor(config = {}) {
   return config;
 }
 
+// 保存登录态
 function responseInterceptor(res = {}) {
   const { config = {}, data } = res;
   const { url = '' } = config;
@@ -21,6 +22,18 @@ function responseInterceptor(res = {}) {
   // 判断是登录接口，保存登录态token信息
   if (url.indexOf(LOGIN_BY_PHONE_URL) !== -1 && data) {
     Service.store.setAuthorization(data);
+  }
+
+  return res;
+}
+
+// 登录态失效需跳转登录
+function responseNeedLoginInterceptor(res = {}) {
+  const { code, config = {}, data } = res;
+  const { url = '' } = config;
+
+  if (String(code) === '401') {
+    Service.navigate.go('/login');
   }
 
   return res;
@@ -36,4 +49,5 @@ export default (axios) => {
 
   // 响应拦截
   axios.interceptors.response.use(responseInterceptor, exception);
+  axios.interceptors.response.use(responseNeedLoginInterceptor, exception);
 };

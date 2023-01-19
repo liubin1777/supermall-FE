@@ -3,7 +3,6 @@ import styles from './index.module.css';
 import mockData from './mock';
 import IndicateArrow from '@component/IndicateArrow';
 import Item from './components/Item';
-import 'antd/dist/antd.css';
 import { Rate } from 'antd';
 
 /**
@@ -26,14 +25,19 @@ export default React.memo(({ data }) => {
         <div className={styles['name-container']}>
           <div className={styles.name}>{data.name}</div>
           {/* <div className={styles.rating}>{data.rating}</div> */}
-          <Rate className={styles.rating} allowHalf disabled defaultValue={4.5} />
+          <Rate
+            className={styles.rating}
+            allowHalf
+            disabled
+            defaultValue={4.5}
+          />
         </div>
         <IndicateArrow color="#E61F00" size="22" />
       </div>
       {/* row-推荐商品 */}
       <div className={styles.list}>
         {data.list.map((itemData, idx) => {
-          return <Item data={itemData} key={idx}/>;
+          return <Item data={itemData} key={idx} />;
         })}
       </div>
     </div>

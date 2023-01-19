@@ -52,4 +52,4 @@ function fetch(data = {}) {
       console.error('[SuperMall] request failed ', url, err);
       return Promise.reject(err);
     });
-};
+}

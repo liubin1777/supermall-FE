@@ -10,6 +10,10 @@ import Loading from '@component/Loading';
 import ErrorBoundary from '@page/error';
 import pagePaths from './page';
 
+// Toast
+import { ToastContainer, toast, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const router = (
   <ErrorBoundary>
     <HistoryRouter history={Service.navigate.history}>
@@ -29,7 +33,20 @@ const router = (
         </Routes>
       </React.Suspense>
     </HistoryRouter>
+
+    {/* Toast */}
+    <ToastContainer
+      position="top-center"
+      hideProgressBar
+      theme="light"
+      limit="1"
+      autoClose={2000}
+      transition={Slide}
+      closeButton={false}
+    />
   </ErrorBoundary>
 );
+
+toast('Wow so easy !');
 
 export default router;
