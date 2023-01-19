@@ -1,0 +1,120 @@
+.root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.root::after {
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.content {
+  z-index: 100;
+  position: absolute;
+  max-height: 80%;
+  min-height: 60%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 30px 30px 0px 0px;
+  overflow: scroll;
+}
+
+.info-row {
+  margin: 30rem;
+  /* background: lightcoral; */
+  box-sizing: border-box;
+  display: flex;
+}
+
+.pic {
+  width: 192rem;
+  height: 192rem;
+  background: #D8D8D8;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.info-right {
+  margin-left: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+}
+
+.original-price {
+  flex: 1 1 auto;
+}
+
+.price {
+  display: inline-flex;
+  align-items: center;
+  height: 54rem;
+  border-radius: 27rem;
+  padding: 0 16rem;
+  font-size: 32rem;
+  background-color: #E61F00;
+  color: white;
+}
+
+.sku-desc {
+  display: inline-block;
+  margin-top: 16rem;
+  font-size: 20rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #7F7F7F;
+  background: #eeeeee;
+  padding: 0 10px;
+  border-radius: 4px;
+}
+
+.sku-row {
+  width: 100%;
+  margin: 10px 0;
+  /* background: lightcyan; */
+}
+
+.sku-attri {
+  margin: 0 30rem;
+  /* background: lightgreen; */
+}
+
+.sku-attri-name {
+  font-size: 24rem;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #201C1C;
+  margin-bottom: 16rem;
+}
+
+.sku-attri-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sku-attri-value {
+  background: #ECECEC;
+  border-radius: 29rem;
+  padding: 14rem 35rem;
+  font-size: 22rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #201C1C;
+  margin-right: 20rem;
+  margin-bottom: 22rem;
+}
+
+.sku-attri-value.selected {
+  background: #FEECEB;
+  border: 2rem solid #BA372B;
+  color: #C34546;
+}

@@ -1,10 +1,8 @@
-const data = [];
-for (let i = 0; i < 3; i++) {
-  data.push({
-    img: 'http://127.0.0.1:9090/assets/goods-detail/banner.png',
-    url: '/',
-  });
-}
 export default {
-  data,
+  data: {
+    price: '289.00',
+    originalPrice: '399.00',
+    name: 'Apple iPhone 14 Pro Max',
+    subTitle: '(A2896) 256GB 暗紫色 支持移动联通电信5G 双卡双待手机',
+  },
 };

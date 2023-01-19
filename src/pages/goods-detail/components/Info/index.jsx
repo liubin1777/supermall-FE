@@ -28,11 +28,11 @@ export default React.memo(({ data }) => {
       <div className={styles['row-price']}>
         <div className={styles['row-price-left']}>
           <div className={styles['row-price-left-origin']}>
-            <PriceLabel price="399.00" size="52" />
+            <PriceLabel price={data.originalPrice} size="52" />
           </div>
           <div className={styles['row-price-left-real']}>
             <div>券后</div>
-            <PriceLabel price="289.00" size="38" color="white" />
+            <PriceLabel price={data.price} size="38" color="white" />
           </div>
         </div>
         <div className={styles['row-price-right']}>月销1000+</div>
@@ -46,7 +46,7 @@ export default React.memo(({ data }) => {
 
       {/* row-标题 */}
       <div className={styles['row-title']}>
-        德业轻音除湿机 12L智能款，设计费方开始啦的加法上来看房健身房几十块
+        {data.name} {data.subTitle}
       </div>
     </div>
   );

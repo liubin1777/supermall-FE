@@ -3,8 +3,7 @@
  */
 import React, { useEffect } from 'react';
 import styles from './index.module.css';
-import { useRequest } from 'ahooks';
-import { fetchGoodsDetailData } from './service/fetchData';
+import { useGetGoodsDetailData } from './service/api';
 import { useSearchParams } from 'react-router-dom';
 import {
   Banner,
@@ -19,18 +18,13 @@ import {
 } from './components';
 
 export default function GoodsDetailPage() {
-  const {
-    data,
-    error,
-    loading,
-    run: fetchData,
-  } = useRequest(fetchGoodsDetailData, { manual: true });
+  const { data, error, loading, run: reqRun } = useGetGoodsDetailData();
   const [searchParams] = useSearchParams();
   // const queryParams = Object.fromEntries([...searchParams]);
 
   useEffect(() => {
-    console.log('[SuperMall] GoodsDetailPage|onLoad|fetchData');
-    fetchData(searchParams.get('id'));
+    console.log('[SuperMall] GoodsDetailPage|onLoad|reqRun');
+    reqRun(searchParams.get('id'));
   }, []);
 
   let content = null;
@@ -47,12 +41,12 @@ export default function GoodsDetailPage() {
   } else {
     content = (
       <>
-        <Banner data={data.banner}/>
-        <Info />
+        <Banner data={data.banner} />
+        <Info data={data.product} />
         <Option />
         <Evaluation />
         <Recommend />
-        <PictureDetail data={data.pictureDetail}/>
+        <PictureDetail data={data.pictureDetail} />
       </>
     );
   }

@@ -11,6 +11,7 @@ import styles from './index.module.css';
  */
 export default React.memo(({ price = '0', size: fontSize = 42, color }) => {
   const priceList = String(price).split('.');
+  priceList[1] = priceList[1] || '00';
 
   let smallFontSize = Math.round(fontSize * 0.66);
   if (smallFontSize < 10) {

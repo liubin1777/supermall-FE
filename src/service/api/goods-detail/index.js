@@ -9,9 +9,8 @@ import Service from '@service';
  * @param {int} goodsId: 商品ID
  * @returns {Promise}
  */
-export function fetchGoodsDetailAPI(goodsId = 0) {
-  return Service.request
-    .get({
-      url: `/product/detail/${goodsId}`,
-    });
+export function getGoodsDetailAPI(goodsId = 0) {
+  return Service.request.get({
+    url: `/product/detail/${goodsId}`,
+  });
 }

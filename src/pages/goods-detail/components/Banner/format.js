@@ -1,8 +1,13 @@
-export default (rawData) => {
-
+export default (rawData, pic) => {
   if (!rawData) {
-    return [];
+    return pic ? [pic] : [];
   }
 
-  return rawData.split(',');
-}
+  const array = rawData.split(',');
+
+  // 放在第一张
+  if (pic) {
+    array.unshift(pic);
+  }
+  return array;
+};
