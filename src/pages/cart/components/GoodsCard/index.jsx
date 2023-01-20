@@ -2,6 +2,8 @@ import * as React from 'react';
 import styles from './index.module.css';
 import { Space, Image, Checkbox, Ellipsis, Stepper } from 'antd-mobile';
 import PriceLabel from '@component/PriceLabel';
+import format from './format';
+import mock from './mock';
 
 /**
  * 购物车商品卡片组件
@@ -10,9 +12,9 @@ import PriceLabel from '@component/PriceLabel';
  * @return {Object} ReactElement
  */
 export default React.memo(({ data }) => {
-  // if (!data) {
-  //   return null;
-  // }
+  if (!data) {
+    data = format(mock.data);
+  }
 
   // 点击回调
   function onClick() {
@@ -34,7 +36,7 @@ export default React.memo(({ data }) => {
         />
         {/* 商品图片 */}
         <Image
-          src={'http://127.0.0.1:9000/mall/20230118/iPhone14PM-color2.webp'}
+          src={data.productPic}
           width={'164rem'}
           height={'164rem'}
           fit="cover"
@@ -46,20 +48,25 @@ export default React.memo(({ data }) => {
             className={styles.title}
             direction="end"
             rows={2}
-            content={
-              'Apple iPhone 14 Pro Max (A2896) 256GB 暗紫色 支持移动联通电信5G 双卡双待手机'
-            }
+            content={`${data.productName || ''} ${data.productSubTitle || ''}`}
           />
           {/* sku 描述 */}
-          <div className={styles['sku-desc']}>暗紫色, 128G</div>
+          <div className={styles['attri']}>{data.attriDesc}</div>
           <Space
             className={styles['info-bottom']}
             align="center"
             justify="between"
             block
           >
-            <PriceLabel price={9899} size="32" />
-            <Stepper min={0} max={100} />
+            <PriceLabel price={data.price} size="32" />
+            <Stepper
+              min={0}
+              max={100}
+              defaultValue={data.quantity}
+              onChange={(e) => {
+                console.log(e);
+              }}
+            />
           </Space>
         </Space>
       </Space>
