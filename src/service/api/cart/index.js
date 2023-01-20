@@ -15,3 +15,15 @@ export function cartAddAPI(data) {
     data,
   });
 }
+
+/**
+ * 购物车列表
+ *
+ * @param {object} data: 商品信息
+ * @returns {Promise}
+ */
+export function cartListAPI() {
+  return Service.request.get({
+    url: `/cart/list`,
+  });
+}
