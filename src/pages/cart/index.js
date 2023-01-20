@@ -4,7 +4,7 @@
 import React, { useEffect } from 'react';
 import styles from './index.module.css';
 // import { useGetHomeContentAPI } from './service/api';
-import { Loading, Error } from './components';
+import { Loading, Error, GoodsCard } from './components';
 
 export default function CartPage() {
   // const {
