@@ -9,7 +9,7 @@ import MePage from '@page/me/index';
 export const TabBarConfig = [
   {
     name: '首页',
-    path: '/',
+    path: '/home',
     page: <HomePage />,
     img_n: 'http://127.0.0.1:9090/assets/home/tabbar/icon-tabbar-home-n.png',
     img_s: 'http://127.0.0.1:9090/assets/home/tabbar/icon-tabbar-home-s.png',

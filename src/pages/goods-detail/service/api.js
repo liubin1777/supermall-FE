@@ -1,6 +1,6 @@
 import Service from '@service';
 import bannerFormat from '../components/Banner/format';
-import skuSheetFormat from '../components/SkuSheet/format';
+import skuSheetFormat from '../components/SkuPopup/format';
 import pictureDetailFormat from '../components/PictureDetail/format';
 import { useRequest } from 'ahooks';
 

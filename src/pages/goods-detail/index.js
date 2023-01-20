@@ -14,7 +14,7 @@ import {
   Option,
   PictureDetail,
   Recommend,
-  SkuSheet,
+  SkuPopup,
   Loading,
   Error,
 } from './components';
@@ -42,7 +42,7 @@ export default function GoodsDetailPage() {
     }
   );
 
-  const [showSkuSheet, setShowSkuSheet] = useState(false);
+  const [showSkuPopup, setShowSkuPopup] = useState(false);
   const [searchParams] = useSearchParams();
   // const queryParams = Object.fromEntries([...searchParams]);
 
@@ -77,19 +77,24 @@ export default function GoodsDetailPage() {
 
   // 点击添加到购物车
   function onClickAddCart(e) {
-    setShowSkuSheet(true);
+    setShowSkuPopup(true);
     buyAction.current = false;
   }
 
   // 点击立即购买
   function onClickBuy(e) {
-    setShowSkuSheet(true);
+    setShowSkuPopup(true);
     buyAction.current = true;
   }
 
   // 选择 sku
   function onClickSku(e) {
-    setShowSkuSheet(false);
+    setShowSkuPopup(false);
+
+    // 点击蒙版取消弹窗
+    if (!e) {
+      return;
+    }
 
     let reqParams = {};
     reqParams.productId = e.productId; // 产品id
@@ -154,9 +159,13 @@ export default function GoodsDetailPage() {
       {/* 底部购物车栏 */}
       <Cart onClickAddCart={onClickAddCartCB} onClickBuy={onClickBuyCB} />
       {/* sku弹窗 */}
-      {showSkuSheet ? (
-        <SkuSheet data={reqData.sku} onClick={onClickSkuCB} />
-      ) : null}
+      {reqData && (
+        <SkuPopup
+          data={reqData.sku}
+          onClick={onClickSkuCB}
+          visible={showSkuPopup}
+        />
+      )}
     </div>
   );
 }

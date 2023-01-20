@@ -22,7 +22,11 @@ const router = (
     <HistoryRouter history={Service.navigate.history}>
       <React.Suspense fallback={<Loading />}>
         <Routes>
+          {/* tabbar容器 */}
           <Route path="/" element={<TabBarPage />}>
+            {/* 默认展示首页 */}
+            <Route index element={TabBarConfig[0].page} />
+            {/* tabbar页面 */}
             {TabBarConfig.map((item, idx) => {
               return (
                 <Route
@@ -33,6 +37,7 @@ const router = (
               );
             })}
           </Route>
+          {/* 非tabbar页面 */}
           {pagePaths.map((item, idx) => {
             let page = item.page;
 
