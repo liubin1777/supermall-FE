@@ -3,7 +3,7 @@ import styles from './index.module.css';
 import mockData from './mock';
 import IndicateArrow from '@component/IndicateArrow';
 import Item from './components/Item';
-import { Rate } from 'antd';
+import { Rate } from 'antd-mobile';
 
 /**
  * GoodsRecommend 商品推荐组件

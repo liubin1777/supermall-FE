@@ -46,10 +46,6 @@ export const TabBarConfig = [
 
 export default [
   {
-    path: '/',
-    page: <TabBarPage />,
-  },
-  {
     path: '/goods-detail',
     page: import('../pages/goods-detail'),
   },

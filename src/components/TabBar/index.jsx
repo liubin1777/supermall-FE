@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from './index.module.css';
 import classNames from 'classnames';
 import Service from '@service';
+import { Link } from 'react-router-dom';
 import mockData from './mock';
 // import service from '@service';
 
@@ -37,8 +38,9 @@ export default React.memo(
 
           return (
             // tabbar-item容器
-            <div
+            <Link
               className={styles.item}
+              to={item.path}
               key={idx}
               onClick={() => {
                 onChange && onChange(idx);
@@ -53,7 +55,7 @@ export default React.memo(
               />
               {/* 标题 */}
               <div className={titleStyle}>{item.name}</div>
-            </div>
+            </Link>
           );
         })}
       </div>

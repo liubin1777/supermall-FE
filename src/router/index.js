@@ -3,12 +3,15 @@ import {
   unstable_HistoryRouter as HistoryRouter,
   Routes,
   Route,
+  Navigate,
 } from 'react-router-dom';
 import Service from '@root/service';
 import Util from '@util/index';
 import Loading from '@component/Loading';
 import ErrorBoundary from '@page/error';
-import pagePaths from './page';
+import pagePaths, { TabBarConfig } from './page';
+import TabBarPage from '@page/tabbar/index';
+import HomePage from '@page/home/index';
 
 // Toast
 import { ToastContainer, toast, Slide } from 'react-toastify';
@@ -19,6 +22,17 @@ const router = (
     <HistoryRouter history={Service.navigate.history}>
       <React.Suspense fallback={<Loading />}>
         <Routes>
+          <Route path="/" element={<TabBarPage />}>
+            {TabBarConfig.map((item, idx) => {
+              return (
+                <Route
+                  path={item.path}
+                  element={item.page}
+                  key={'tabbar' + idx}
+                />
+              );
+            })}
+          </Route>
           {pagePaths.map((item, idx) => {
             let page = item.page;
 
