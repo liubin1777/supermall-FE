@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styles from './index.module.css';
+import Service from '@service';
 import { Space, Image, Checkbox, Ellipsis, Stepper } from 'antd-mobile';
 import PriceLabel from '@component/PriceLabel';
 import format from './format';
@@ -19,6 +20,7 @@ export default React.memo(({ data }) => {
   // 点击回调
   function onClick() {
     console.log('[SuperMall] Goods|onClick');
+    Service.navigate.go('/goods-detail', { id: data.productId });
   }
 
   // console.log('[SuperMall] GoodsCard|render');
@@ -40,16 +42,21 @@ export default React.memo(({ data }) => {
           width={'164rem'}
           height={'164rem'}
           fit="cover"
+          onClick={onClick}
         />
 
         <Space direction="vertical" className={styles.info}>
           {/* 商品名字 */}
-          <Ellipsis
-            className={styles.title}
-            direction="end"
-            rows={2}
-            content={`${data.productName || ''} ${data.productSubTitle || ''}`}
-          />
+          <div onClick={onClick}>
+            <Ellipsis
+              className={styles.title}
+              direction="end"
+              rows={2}
+              content={`${data.productName || ''} ${
+                data.productSubTitle || ''
+              }`}
+            />
+          </div>
           {/* sku 描述 */}
           <div className={styles['attri']}>{data.attriDesc}</div>
           <Space
