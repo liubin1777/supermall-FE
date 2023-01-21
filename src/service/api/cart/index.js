@@ -22,7 +22,7 @@ export function cartAddAPI(data) {
  * @param {object} data: 商品信息
  * @returns {Promise}
  */
-export function cartListAPI() {
+export function getCartListAPI() {
   return Service.request.get({
     url: `/cart/list`,
   });

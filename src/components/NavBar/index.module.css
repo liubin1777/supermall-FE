@@ -1,0 +1,19 @@
+.root {
+  font-size: 32rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+}
+
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  color: #201C1C;
+  background-color: white;
+}
+
+.space {
+  height: 45px;
+  /* background-color: blue; */
+}

@@ -3,58 +3,49 @@
  */
 import React, { useEffect } from 'react';
 import styles from './index.module.css';
-// import { useGetHomeContentAPI } from './service/api';
-import { Loading, Error, GoodsCard } from './components';
+import { useGetCartListAPI } from './service/api';
+import { Loading, Error, GoodsCard, NavBar } from './components';
 
 export default function CartPage() {
-  // const {
-  //   data: reqData,
-  //   error: reqError,
-  //   loading: reqLoading,
-  //   run: reqRun,
-  // } = useGetHomeContentAPI();
+  const {
+    data: reqData,
+    error: reqError,
+    loading: reqLoading,
+    run: reqRun,
+  } = useGetCartListAPI();
 
   useEffect(() => {
     console.log('[SuperMall] CartPage|onLoad|reqRun');
-    // reqRun();
+    reqRun();
   }, []);
 
   let content = null;
-  if (false) {
+  if (reqError) {
     // 展示错误
     content = (
       <div className={styles.error}>
         <Error />
       </div>
     );
-  } else if (true) {
+  } else if (reqLoading) {
     // 展示loading
     content = <Loading />;
-  } else {
+  } else if (reqData) {
     // 展示数据
     content = (
-      <>
-        <div className={styles['middle-content']}>
-          {/* <Banner data={reqData.bannerList} />
-          <KingPie data={reqData.kingpieList} />
-          <ActivityCardList />
-          <ChannelTab />
-          <GoodsCardList /> */}
-        </div>
-      </>
+      <div className={styles['goods-list']}>
+        {reqData.map((item, idx) => {
+          return <GoodsCard data={item} key={idx}></GoodsCard>;
+        })}
+      </div>
     );
   }
 
   return (
     <div className={styles.page}>
-      <div className={styles['top-background']} />
-      <div className={styles['top-content']}>
-        {/* <TopTab />
-        <SearchBar /> */}
-        {/* <Tabs data={reqData && reqData.cateData} /> */}
-      </div>
+      {/* 导航栏 */}
+      <NavBar backArrow={false}>购物车</NavBar>
       {content}
-      {/* <TabBar /> */}
     </div>
   );
 }
